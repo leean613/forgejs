@@ -1,8 +1,10 @@
 import { useState } from "react";
 import React from 'react';
+import { createBrowserHistory } from "history";
+
 function App(props)  {
-  const [test, getTest] = useState(0);
-  console.log("in app");
+    const hist = createBrowserHistory();
+    console.log(hist);
  return(
     <h1>AN</h1>
  );
