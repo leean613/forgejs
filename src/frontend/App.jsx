@@ -1,20 +1,10 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-
-// function render() {
-//   ReactDOM.render(<h2>Hello from React!</h2>, document.body);
-// }
-const Hello = () => {
-  return(
-  <>
-    <div>ANANANAN</div>
-  </>
-  )
-}
-
-function App ()  {
+import { useState } from "react";
+import React from 'react';
+function App(props)  {
+  const [test, getTest] = useState(0);
+  console.log("in app");
  return(
-   <Hello/>
+    <h1>AN</h1>
  );
 }
 export default App;
