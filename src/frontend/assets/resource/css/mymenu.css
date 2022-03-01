@@ -1,0 +1,79 @@
+﻿@charset "UTF-8";
+
+/* --------------------------------------------------------------------------------
+   マイメニューのテスト
+-------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 425px) {
+  .tit_user {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .modal_mymenu {
+    width: 85%;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 8888;
+  }
+
+  .modal_mymenu .modal_wrap ul li a {
+    padding: 45px 10px !important;
+  }
+}
+
+.modal_mymenu .modal_wrap {
+  padding: 30px 0;
+}
+
+.modal_mymenu .modal_tit {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 30px;
+  padding: 0 20px;
+}
+
+.modal_mymenu .modal_wrap ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30px 40px;
+}
+
+#modal_mycarte_mymenu.modal_mymenu .modal_wrap ul {
+  justify-content: space-between;
+}
+/* AN-EDIT-MYMODAL-MENU-START */
+#mycarte #modal_mycarte_mymenu .modal_wrap ul {
+  justify-content: center;
+}
+/* AN-EDIT-MYMODAL-MENU-END */
+
+.modal_mymenu .modal_wrap ul li a {
+  padding: 45px 15px;
+  color: #4d4d4d;
+  text-align: center;
+  background: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.modal_mymenu .modal_wrap .account_top {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.modal_mymenu .modal_wrap .logout a {
+  width: 146px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #4d4d4d;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.main_wrap__detail_tit {
+  z-index: 8888;
+}

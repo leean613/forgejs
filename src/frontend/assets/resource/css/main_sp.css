@@ -1,0 +1,968 @@
+﻿@charset "UTF-8";
+
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  a,
+  label,
+  button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  .container {
+    position: static;
+    display: block;
+    max-width: 100%;
+    margin: 0;
+  }
+  .main_wrap__detail.side_hide {
+    left: 0 !important;
+  }
+}
+
+/* --------------------------------------------------------------------------------
+   ヘッダー
+-------------------------------------------------------------------------------- */
+/* @media screen and (min-width: 426px) and (max-width: 799px) {
+  #mycarte .detail_wrap__tit {
+    padding-top: 300px;
+  }
+} */
+@media screen and (min-width: 374px) and (max-width: 799px) {
+  #mycarte .graph_box {
+    padding: 0;
+  }
+
+  #mycarte .note_container {
+    width: 100%;
+    margin: 0;
+  }
+  #mycarte .chart_container {
+    width: 100%;
+    margin: 0;
+  }
+
+  #mycarte .LowerLimbMuscleStrength_container {
+    width: 100%;
+  }
+
+  header {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
+    top: 0;
+  }
+  #mycarte.application header,
+  #mycarte.side_none header {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    background: #fff;
+  }
+  .header_wrap {
+    position: static;
+    width: 100%;
+    height: auto;
+    background: none;
+  }
+  #alc-maintenance .header_wrap {
+    position: static;
+    width: 100%;
+    height: auto;
+    background: none;
+  }
+  #mycarte.application .header_wrap {
+    flex-wrap: wrap;
+  }
+  #mycarte.application .header_logo,
+  #mycarte.side_none .header_logo {
+    width: 100%;
+    height: 83px;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    order: 1;
+  }
+  #mycarte.application .header_logo h1,
+  #mycarte.side_none .header_logo h1 {
+    width: 152px;
+  }
+  #mycarte.application .header_user {
+    width: calc(100% - 148px);
+    padding: 0 10px;
+    order: 2;
+  }
+  #mycarte.application .header_user dl dt {
+    width: 44px;
+  }
+  #mycarte.application .header_user dl dd {
+    font-size: 1em;
+  }
+  #mycarte.application .header_btn {
+    width: 148px;
+    padding: 10px;
+  }
+  .g_nav label {
+    height: 50px;
+    cursor: auto;
+  }
+  .g_nav label h2 {
+    top: 17px !important;
+  }
+  .g_nav label::before {
+    top: 0px;
+  }
+  #mycarte.g_nav .toggle::before {
+    top: 17px;
+  }
+  .g_nav input[type="checkbox"].on_off:checked ~ label::before {
+    content: url(../images/menu_btn_close.png);
+  }
+
+  #mycarte[class^="account_"]
+    .g_nav
+    input[type="checkbox"].on_off:checked
+    ~ label::before {
+    content: url(../images/menu_btn_close.png);
+  }
+  .g_nav input[type="checkbox"].on_off ~ ul {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .g_nav input[type="checkbox"].on_off:checked ~ ul {
+    height: 100vh;
+    overflow: scroll;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .g_nav ul li {
+    background: #f2f2f2;
+  }
+  .g_nav > ul > li:first-child {
+    padding: 25px 0 5px 5px;
+  }
+  #alc-maintenance   .g_nav > ul > li:first-child {
+    padding: 25px 0 5px 5px;
+  }
+  .g_nav > ul > li:last-child {
+    padding: 5px 0 25px 5px;
+  }
+
+  .g_nav .toggle {
+    height: 52px;
+  }
+  .main_wrap__tit {
+    z-index: 9989;
+  }
+}
+
+.responsive_common {
+  margin-left: 300px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .main_wrap__detail_tit .box1 p {
+    font-size: 13px;
+  }
+
+  .main_wrap__detail_tit .box1 h2 {
+    margin: 0 20px 0 0;
+    font-size: 15px;
+    font-weight: normal;
+  }
+  .detail_wrap__tit_h3 h3 {
+    font-size: 15px;
+    /* font-weight: normal; */
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .main_wrap__tit {
+    width: calc(100% - 300px) !important;
+  }
+  .main_wrap__detail_tit {
+    width: calc(100% - 300px);
+  }
+
+  #inspection.application header {
+    width: 100%;
+  }
+
+  .main_wrap__detail.side_hide {
+    width: 100% !important;
+  }
+}
+
+
+/* --------------------------------------------------------------------------------
+   トップページ
+-------------------------------------------------------------------------------- */
+@media screen and (max-width: 425px) {
+  .main_wrap__detail.side_hide {
+    width: 100%;
+  }
+
+  #mycarte[class^="account_link"] .main_wrap {
+    width: 100%;
+    margin: 0;
+    padding: 15px 0;
+  }
+  #mycarte.application .main_wrap {
+    width: 100%;
+    padding: 157px 0 0;
+  }
+  #mycarte.side_none .main_wrap {
+    width: 100%;
+    padding: 91px 0 0;
+  }
+  .main_wrap__tit {
+    position: static;
+    width: 100%;
+    padding: 15px;
+    z-index: 8888;
+  }
+  #alc-maintenance .main_wrap__tit {
+    position: static;
+    width: 100%;
+    padding: 15px;
+    z-index: 8888;
+  }
+  .main_wrap__tit.side_hide {
+    width: 100% !important;
+  }
+  #alc-maintenance .main_wrap__tit.side_hide {
+    width: 100% !important;
+  }
+  .g_nav .toggle {
+    margin-top: -15px !important;
+    height: 66px !important;
+  }
+  .g_nav label {
+    height: 30px !important;
+  }
+
+  .main_wrap__detail_tit {
+    position: static;
+    top: auto;
+    width: 100%;
+    /* padding: 10px 15px; */
+  }
+
+  .main_wrap__detail_tit .box1 {
+    display: block;
+  }
+  .main_wrap__detail_tit .box1 h2 {
+    margin: 0;
+    font-size: 1.4em;
+  }
+  .main_wrap__detail_tit .box1 p {
+    font-size: 1em;
+  }
+  #mycarte .main_wrap__detail {
+    width: 100%;
+  }
+  .main_wrap__detail,
+  #mycarte:not(.mycarte_top):not(.notice) .main_wrap__detail {
+    padding: 0;
+  }
+  .detail_wrap__tit {
+    display: block;
+    padding: 15px;
+    text-align: center;
+  }
+  .detail_wrap__tit .logo {
+    margin: 0 auto;
+  }
+  .result_tit h3 {
+    margin: 10px 0 0;
+    font-size: 1.4em;
+  }
+  .result_wrap {
+    padding: 0 15px 15px;
+  }
+  .result_box:not(:last-child) {
+    margin: 0 0 20px;
+  }
+  .graph_box {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  .graph_box.center {
+    height: auto;
+  }
+  .graph_box__inner:not(:last-child) {
+    margin: 0 0 20px;
+  }
+  .result_box_inner_wrap {
+    display: block;
+    justify-content: unset;
+  }
+  .result_box_inner:nth-of-type(1) {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+  .result_box_inner:nth-of-type(2) {
+    width: 100%;
+  }
+}
+
+/* ---------- マイカルテアプリ　ログイン　／　施設アカウント連携 ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.login .login_wrap,
+  #mycarte[class^="account_link"] .login_wrap {
+    margin: 0;
+    padding: 10px;
+  }
+  #mycarte.login .login_wrap h1,
+  #mycarte[class^="account_link"] .login_wrap h1 {
+    width: 152px;
+  }
+
+  #mycarte[class^="account_link"] .login_wrap .form_inner {
+    width: 100%;
+    margin: 60px 0 0;
+  }
+  #mycarte.login .login_wrap .form_inner .box,
+  #mycarte[class^="account_link"] .login_wrap .form_inner .box {
+    margin: 0 0 60px;
+  }
+  #mycarte.login .login_wrap .form_inner .box .login_check,
+  #mycarte[class^="account_link"] .login_wrap .form_inner .box .login_check {
+    margin: 0 0 20px;
+  }
+
+  #mycarte.login .login_wrap .form_inner .box .login_check label {
+    display: flex;
+  }
+
+  #mycarte.login .login_wrap .form_inner .box .login_forgot a,
+  #mycarte[class^="account_link"] .login_wrap .form_inner .box .login_forgot a {
+    margin: 0 0 0 21px;
+  }
+  #mycarte.login .login_wrap .form_inner .submit_btn {
+    text-align: center;
+  }
+  /* #mycarte.login .login_wrap .form_inner .submit_btn button, */
+  #mycarte.login .login_wrap .form_inner .submit_btn a,
+  #mycarte.account_link_login .login_wrap .form_inner .submit_btn a {
+    width: 200px;
+  }
+  #mycarte.login .login_wrap .form_inner .submit_btn a,
+  #mycarte.account_link_login .login_wrap .form_inner .submit_btn a {
+    margin: 0 auto;
+    font-size: 1em;
+  }
+
+  #mycarte[class^="account_link"] .login_wrap p {
+    margin: 25px 0 0;
+  }
+  #mycarte.login .login_wrap p a,
+  #mycarte[class^="account_link"] .login_wrap p a {
+    margin: 0;
+  }
+}
+
+/* ---------- マイカルテアプリ　アプリケーション一覧 ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.application .application_wrap {
+    margin: 35px 0 0;
+    padding: 0 20px;
+  }
+  #mycarte.application .appli_menu {
+    margin: 0 0 15px;
+    padding: 0;
+  }
+  #mycarte.application .appli_menu ul li {
+    width: 47%;
+    margin: 0 0 6%;
+  }
+  #mycarte.application .appli_menu ul li a {
+    padding: 55px 30px;
+    font-size: 1em;
+  }
+  #mycarte.application .appli_sub_menu {
+    padding: 35px 0 50px;
+  }
+  #mycarte.application .appli_sub_menu ul {
+    display: block;
+  }
+  #mycarte.application .appli_sub_menu ul li {
+    width: 220px;
+    margin: 0 auto;
+  }
+  #mycarte.application .appli_sub_menu ul li:not(:last-child) {
+    margin: 0 auto 20px;
+  }
+  #mycarte.application .appli_sub_menu ul li a {
+    padding: 15px;
+    font-size: 1em;
+  }
+  #mycarte.application .appli_sub_menu ul li:not(:first-child) a {
+    padding: 27px 15px;
+  }
+}
+
+/* ---------- マイカルテアプリ　運動器健診結果（項目別） ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.choice .menu_tit__list {
+    display: block;
+  }
+  #mycarte.choice .choice_list {
+    padding: 0 15px;
+  }
+}
+
+/* ---------- マイカルテアプリ　運動メニュー ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  .motion_menu {
+    padding: 0 15px;
+  }
+}
+
+/* ---------- マイカルテアプリ　お知らせ ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.notice .notice_list__check {
+    left: 0;
+    width: 100%;
+    padding: 12.5px 9px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.2);
+  }
+  #mycarte.notice .notice_list__detail dl {
+    display: block;
+  }
+  #mycarte.notice .notice_list__detail dl dt {
+    width: 100%;
+    padding: 12.5px 10px 0 0em;
+    /* text-indent: -2.5em; */
+    border-bottom: none;
+  }
+  #mycarte.notice .notice_list__detail dl dt input {
+    margin: 0 1em 0 10px;
+  }
+  #mycarte.notice .notice_list__detail dl dd {
+    width: 100%;
+  }
+}
+
+/* ---------- マイカルテアプリ　設定 ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.setting .setting_list {
+    padding: 0 15px;
+  }
+}
+
+/* ---------- マイカルテアプリ　ヘルプ ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.help .help_menu {
+    padding: 0 15px;
+  }
+}
+
+/* ---------- マイカルテアプリ　FAQ ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.faq .faq_list,
+  #mycarte.account_faq .faq_list {
+    padding: 0 15px;
+  }
+  /* #mycarte.faq .faq_list__inner, */
+  #mycarte.account_faq .faq_list__inner {
+    height: 600px;
+  }
+}
+
+/* ---------- マイカルテアプリ　問い合わせ ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.inquiry .inquiry_menu,
+  #mycarte.account_inquiry .inquiry_menu {
+    margin: 50px 0 0;
+    padding: 0 15px;
+  }
+  #mycarte.inquiry .inquiry_menu .inquiry_menu__inner ul li a,
+  #mycarte.account_inquiry .inquiry_menu .inquiry_menu__inner ul li a {
+    border: 3px solid #e6e6e6;
+  }
+  #mycarte.inquiry .inquiry_menu .inquiry_menu__inner ul li:first-child,
+  #mycarte.account_inquiry
+    .inquiry_menu
+    .inquiry_menu__inner
+    ul
+    li:first-child {
+    margin: 0 0 30px;
+  }
+  #mycarte.inquiry .inquiry_menu .inquiry_menu__inner ul li:first-child a,
+  #mycarte.account_inquiry
+    .inquiry_menu
+    .inquiry_menu__inner
+    ul
+    li:first-child
+    a {
+    padding: 61px 20px;
+    font-size: 1.5em;
+  }
+  #mycarte.inquiry .inquiry_menu .inquiry_menu__inner ul li:last-child a,
+  #mycarte.account_inquiry
+    .inquiry_menu
+    .inquiry_menu__inner
+    ul
+    li:last-child
+    a {
+    padding: 27px 20px;
+  }
+
+  #mycarte.inquiry
+    .inquiry_menu
+    .inquiry_menu__inner
+    ul
+    li:last-child
+    a
+    dl
+    dd.tit,
+  #mycarte.account_inquiry
+    .inquiry_menu
+    .inquiry_menu__inner
+    ul
+    li:last-child
+    a
+    dl
+    dd.tit {
+    font-size: 1.5em;
+  }
+}
+
+/* ---------- マイカルテアプリ　問い合わせフォーム ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.inquiry_form .menu_tit__list,
+  #mycarte.account_inquiry_form .menu_tit__list {
+    display: block;
+  }
+  #mycarte.inquiry_form .inquiry_form_wrap,
+  #mycarte.account_inquiry_form .inquiry_form_wrap {
+    padding: 0 15px;
+  }
+  #mycarte.account_inquiry_form .inquiry_form_wrap__inner {
+    height: 600px;
+  }
+}
+
+/* ---------- マイカルテアプリ　アカウント情報編集（アカウントサービスTOP）　／　運動器ID ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.account_top .account_top_list,
+  #mycarte.motionid_id .motionid_id_list {
+    padding: 0 15px;
+  }
+  #mycarte.account_top .account_top_list__inner .box dl,
+  #mycarte.motionid_id .motionid_id_list__inner .box dl {
+    display: block;
+  }
+  #mycarte.account_top .account_top_list__inner .box > dl > dt,
+  #mycarte.account_top .account_top_list__inner .box dl dd.data,
+  #mycarte.motionid_id .motionid_id_list__inner .box > dl > dt,
+  #mycarte.motionid_id .motionid_id_list__inner .box dl dd.data {
+    width: 100%;
+  }
+  #mycarte.motionid_id .motionid_id_list__inner .box dl dd.data ul li {
+    word-break: break-all;
+  }
+
+  #mycarte.account_top
+    .account_top_list__inner
+    .box
+    dl
+    dd.data
+    ul
+    li:not(:last-child),
+  #mycarte.motionid_id
+    .motionid_id_list__inner
+    .box
+    dl
+    dd.data
+    ul
+    li:not(:last-child) {
+    margin: 0 0 10px;
+  }
+  #mycarte.motionid_id .motionid_id_list__inner .box dl dd.data .qr_code {
+    margin: 20px 0 0;
+  }
+  .account_top_list__inner .box dl dd.data dl.plan_mycarte dt,
+  .account_top_list__inner .box dl dd.data dl.plan_mycarte dd {
+    width: 100%;
+  }
+  #mycarte.account_top .account_top_list__inner .box dl dd.data dl.login {
+    display: flex;
+  }
+  #mycarte.account_top .account_top_list__inner .box dl dd.data dl.login dt {
+    width: 14.5em;
+  }
+  #mycarte.account_top .account_top_list__inner .box dl dd.data dl.login dd {
+    width: calc(100% - 14.5em);
+  }
+
+  #mycarte.account_top
+    .account_top_list__inner
+    .box
+    dl
+    dd.data
+    dl
+    dd:not(:last-child) {
+    margin: 0 0 10px;
+  }
+  #mycarte.account_top .account_top_list__inner .box dl dd.edit__btn,
+  #mycarte.motionid_id .motionid_id_list__inner .box dl dd.edit__btn {
+    margin: 0 auto;
+  }
+}
+
+/* ---------- マイカルテアプリ　登録情報編集　／　運動器ID編集 ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.account_edit .menu_tit__list {
+    display: block;
+  }
+  #mycarte.account_edit .account_edit_wrap,
+  #mycarte.motionid_edit .motionid_edit_wrap {
+    padding: 0 15px;
+  }
+  #mycarte.motionid_edit .motionid_edit_wrap {
+    margin: 50px 0;
+  }
+  #mycarte.account_edit .account_edit_wrap .form_inner dl,
+  #mycarte.motionid_edit .motionid_edit_wrap .form_inner dl {
+    width: 100%;
+  }
+  #mycarte.account_edit .account_edit_wrap .form_inner dl dd.name_list,
+  #mycarte.account_edit .account_edit_wrap .form_inner dl dd.gender_list,
+  #mycarte.account_edit .account_edit_wrap .form_inner dl dd.birthday_list {
+    width: 100%;
+  }
+  #mycarte.account_edit .account_edit_wrap .form_inner dl dd.name_list {
+    justify-content: flex-start;
+  }
+  #mycarte.account_edit .account_edit_wrap .form_inner dl dd.name_list input {
+    width: 120px;
+  }
+
+  #mycarte.account_edit
+    .account_edit_wrap
+    .form_inner
+    dl
+    dd.name_list
+    input:not(:last-child) {
+    margin: 0 20px 0 0;
+  }
+  #mycarte.account_edit .account_edit_wrap .form_inner dl dd.gender_list label {
+    width: 47%;
+  }
+
+  #mycarte.account_edit
+    .account_edit_wrap
+    .form_inner
+    dl
+    dd.birthday_list
+    input {
+    width: 30%;
+  }
+  #mycarte.motionid_edit
+    .motionid_edit_wrap
+    .form_inner
+    dl
+    dd.height_list
+    input {
+    width: 250px;
+  }
+  #mycarte.motionid_edit .motionid_edit_wrap .form_inner .edit_save__btn {
+    margin: 50px 0;
+  }
+}
+
+/* ---------- マイカルテアプリ　連携アカウント情報編集 ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.account_sub .account_sub_list {
+    padding: 0 15px;
+  }
+  #mycarte.account_sub .account_sub_list__inner .box > dl {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  #mycarte.account_sub .account_sub_list__inner .box > dl dt {
+    width: 100%;
+    margin: 0 0 10px;
+  }
+}
+/* ---------- モーダル　スタイル調整 ---------- */
+/* ---------- 連携解除用 ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #modal_release {
+    padding: 30px;
+  }
+  #modal_release p {
+    margin: 0 0 30px;
+  }
+}
+
+/* ---------- マイカルテアプリ　施設アカウント連携　／　施設アカウント連携完了 ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #mycarte.account_link .account_link_wrap {
+    margin: 70px 0 0;
+    padding: 0;
+  }
+  #mycarte.account_link_done .account_link_done_wrap {
+    margin: 70px 0 50px;
+    padding: 0;
+  }
+  #mycarte.account_link .account_link_wrap .note_wrap h2,
+  #mycarte.account_link_done .account_link_done_wrap .note_wrap h2 {
+    margin: 0 0 70px;
+    font-size: 1.2em;
+  }
+  #mycarte.account_link .account_link_wrap .note_wrap h2 span,
+  #mycarte.account_link_done .account_link_done_wrap .note_wrap h2 span {
+    display: block;
+  }
+  #mycarte.account_link .account_link_wrap .note_wrap a,
+  #mycarte.account_link_done .account_link_done_wrap .note_wrap a {
+    width: auto;
+    font-size: 1em;
+  }
+  #mycarte.account_link .account_link_wrap .agree_check label {
+    display: inline-block;
+    padding: 0 0 0 1.5em;
+    text-indent: -1.4em;
+  }
+}
+
+/* ---------- マイカルテアプリ　新規アカウント作成 ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+
+  #mycarte.account_new
+    .account_new_wrap__inner
+    .form_inner
+    ul
+    li:not(:last-child) {
+    margin: 0 0 20px;
+  }
+  #mycarte.account_new .account_new_wrap__inner .form_inner ul li.name_list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #mycarte.account_new
+    .account_new_wrap__inner
+    .form_inner
+    ul
+    li.name_list
+    input,
+  #mycarte.account_new
+    .account_new_wrap__inner
+    .form_inner
+    ul
+    li.gender_list
+    label {
+    width: 48%;
+  }
+  #mycarte.account_new
+    .account_new_wrap__inner
+    .form_inner
+    ul
+    li.name_list
+    input:first-child {
+    margin: 0;
+  }
+  #mycarte.account_new .account_new_wrap__inner .form_inner .agree_check {
+    position: static;
+    margin: 30px 0 0;
+  }
+  #mycarte.account_new .account_new_wrap__inner .form_inner .agree_check label {
+    display: inline-block;
+    padding: 0 0 0 1.5em;
+    text-indent: -1.4em;
+  }
+}
+
+/* ---------- マイカルテアプリ　アカウント認証 ---------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  /* #mycarte.account_auth .account_auth_wrap {
+    margin: 50px 0 0;
+    padding: 0 20px;
+  } */
+  #mycarte.account_auth .account_auth_wrap__inner {
+    padding: 20px;
+  }
+  #mycarte.account_auth .account_auth_wrap__inner ul li:not(:last-child) {
+    margin: 0 0 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------------
+   マイメニュー
+-------------------------------------------------------------------------------- */
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  .tit_user,
+  .modal_mymenu .modal_tit .close__btn {
+  }
+  .modal_mymenu {
+    width: 85%;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+  }
+}
+
+/* .main_wrap.side_hide {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+} */
+
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  .header_wrap {
+    width: 100%;
+  }
+
+  .responsive_common {
+    margin-left: 0;
+  }
+
+  .main_wrap {
+    padding: 0;
+    width: 100%;
+  }
+
+  .main_wrap__tit {
+    width: 100%;
+  }
+  #alc-maintenance  .main_wrap__tit {
+    width: 100%;
+  }
+ 
+  .main_wrap.side_hide {
+    width: 100%;
+  }
+
+  .main_wrap__detail_tit {
+    top: 198px;
+    width: 100% !important;
+  }
+  footer {
+    width: 100%;
+  }
+
+  /* app management */
+  .dashboard_wrap {
+    padding: 0%;
+  }
+  .dashboard_box {
+    justify-content: unset;
+  }
+
+  .dashboard_box .dashboard_box__inner {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .canvas-base {
+    width: 100%;
+    left: 0;
+  }
+
+  .data_list_menu {
+    padding: 0 0px 0 10px;
+  }
+
+  .scroll_table {
+    overflow: auto;
+    width: 95%;
+  }
+
+  .data_list_menu__inner table thead {
+    position: unset;
+  }
+
+  /* .data_list_menu__inner table tbody {
+    margin: 0;
+  } */
+
+  #management.input .detail_wrap {
+    padding: 0;
+  }
+
+  #management.input .input_wrap {
+    padding: 0;
+  }
+
+  .glo-responsiveInput {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .glo-buttonInput {
+    margin-left: 5px;
+  }
+
+  .glo-urlCopy {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .glo-buttonLi {
+    padding-right: 10px;
+  }
+
+  .glo-inputWrap {
+    margin-top: 30px;
+  }
+
+  #management.notice .notice_list__check {
+    left: 0;
+    /* width: 100%; */
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 500px) {
+  p.percentage {
+    font-size: 2.3em !important;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 500px) {
+  p.percentage {
+    font-size: 3em !important;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 600px) {
+  p.percentage {
+    font-size: 3.5em !important;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 799px) {
+  p.percentage {
+    font-size: 4.5em !important;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1209px) {
+  #management.input .input_wrap {
+    padding: 0;
+  }
+
+  .glo-inputWrap {
+    margin-top: 220px;
+  }
+}
+
+#mycarte.notice_list__check {
+  width: 83.5%;
+}
+.main_wrap__detail_tit {
+  width: calc(100% - 300px);
+}
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  .main_wrap__tit {
+    margin-top: 124px;
+  }
+}
+/* @media screen and (min-width: 423px) and (max-width: 799px) {
+  .main_wrap__tit {
+		margin-top: 74px;
+	}
+} */

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* --------------------------------------------------------------------------------
+   サイドハイドのテスト
+-------------------------------------------------------------------------------- */
+.header_wrap.side_hide {
+	height: auto;
+}
+
+.g_nav .toggle {
+	cursor: pointer;
+}
+
+.main_wrap__detail.side_hide {
+	position: absolute;
+	left: 0;
+	width: 1280px;
+}
+
+.data_list_menu__inner table thead.side_hide,
+.data_list_menu__inner table tbody.side_hide {
+	width: 1217px;
+}

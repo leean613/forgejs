@@ -1,0 +1,4337 @@
+﻿@charset "UTF-8";
+
+/* paddingを枠内で調整してくれる */
+* {
+  box-sizing: border-box;
+}
+
+/* clearfix */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ".";
+  clear: both;
+  height: 0;
+}
+
+img {
+  width: 100%;
+  vertical-align: top;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+body {
+  height: 100%;
+  position: relative;
+  margin: 0;
+  color: #4d4d4d;
+  font-size: 1em;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+    Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media print {
+  body {
+    width: 980px;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  margin: 0;
+}
+
+.container.login,
+.container[class^="account_link"],
+.container[class^="account_new"],
+.container[class^="account_auth"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.container.application,
+.container.side_none {
+  display: block;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------------
+   ヘッダー
+-------------------------------------------------------------------------------- */
+header {
+  /* 25/02/2021/TU/DEL/START */
+  /* width: 300px; */
+  /* 25/02/2021/TU/DEL/END */
+  z-index: 100000;
+}
+
+@media print {
+  header {
+    display: none;
+  }
+  #management.application header,
+  #inspection.application header,
+  #mycarte.application header,
+  #mycarte.side_none header {
+    display: block;
+  }
+}
+
+#management.application header,
+/* #inspection.application header, */
+#mycarte.application header,
+#mycarte.side_none header {
+  padding: 20px 30px;
+  border-top: 8px solid #f87c15;
+}
+#alc-maintenance .header_wrap {
+  position: fixed;
+  width: 300px;
+  height: 92.1%;
+  margin-top: 74px;
+  background: #e0e0e1;
+}
+.header_wrap {
+  position: fixed;
+  width: 300px;
+  height: 92.1%;
+  margin-top: 74px;
+  background: #f2f2f2;
+}
+
+#management.application .header_wrap,
+#inspection.application .header_wrap,
+#mycarte.application .header_wrap,
+#mycarte.side_none .header_wrap {
+  position: static;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+}
+
+#mycarte.side_none .header_wrap {
+  justify-content: center;
+}
+
+#inspection.application .header_wrap {
+  margin-top: 0 !important;
+}
+
+.header_logo {
+  height: 74px;
+  padding: 16px;
+  background: #f87c15;
+  width: 300px;
+  position: fixed;
+}
+
+#management .header_logo,
+#inspection .header_logo,
+#alc-maintenance .header_logo {
+  background: #fff;
+  border-top: 8px solid #f87c15;
+}
+
+#management.application .header_logo,
+#mycarte.application .header_logo {
+  width: 30%;
+  height: auto;
+  padding: 0;
+  border-top: none;
+  order: 2;
+}
+
+#mycarte.side_none .header_logo {
+  width: 30%;
+  height: auto;
+  padding: 0;
+  border-top: none;
+}
+
+#mycarte.application .header_logo,
+#mycarte.side_none .header_logo,
+#alc-maintenance .header_logo {
+  background: #fff;
+}
+
+.header_logo h1 {
+  line-height: 1em;
+}
+
+#management.application .header_logo h1,
+#inspection.application .header_logo h1,
+#mycarte.application .header_logo h1,
+#mycarte.side_none .header_logo h1 {
+  width: 210px;
+  margin: 0 auto;
+}
+
+.header_logo h1 a {
+  width: 152px;
+  margin: 0 auto;
+}
+
+.header_user {
+  width: 35%;
+  order: 1;
+}
+
+.header_user dl {
+  display: flex;
+  align-items: center;
+}
+
+.header_user dl dd {
+  margin: 0 0 0 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header_btn {
+  width: 35%;
+  order: 3;
+  align-self: flex-start;
+}
+
+.header_btn .logout__btn {
+  float: right;
+}
+
+.header_btn .logout__btn a {
+  width: 10em;
+  padding: 12px;
+  color: #4d4d4d;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: normal;
+  background: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+}
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  .header_btn .logout__btn a {
+    width: 8em;
+    padding: 10px;
+    font-size: 1em;
+  }
+}
+.header_btn .logout__btn a:hover {
+  background: #d9d9d9;
+}
+
+.g_nav input {
+  display: none;
+}
+
+.g_nav label {
+  position: relative;
+  height: 74px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.g_nav label h2 {
+  position: absolute;
+  top: 30px;
+  left: 56px;
+  width: auto;
+  height: 15px;
+}
+
+.g_nav label h2 img {
+  width: auto;
+  height: 15px;
+}
+
+.g_nav label::before {
+  content: url(../images/menu_btn_open.png);
+  position: absolute;
+  top: 12px;
+  width: 56px;
+  height: 50px;
+}
+
+.g_nav ul li {
+  padding: 5px 0 5px 5px;
+}
+
+.g_nav > ul > li:first-child {
+  padding: 55px 0 5px 5px;
+}
+#alc-maintenance .g_nav > ul > li:first-child {
+  padding: 25px 0 5px 5px;
+}
+.g_nav ul li a {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  color: #4d4d4d;
+}
+
+.g_nav ul li a:hover,
+.g_nav ul li a.on {
+  font-weight: bold;
+  background: #fff;
+  border-radius: 22px 0 0 22px;
+}
+
+#mycarte .g_nav ul li:nth-of-type(3),
+#mycarte .g_nav ul li:nth-of-type(5) {
+  border-bottom: 1px solid #ccc;
+}
+
+#mycarte[class^="account_"] .g_nav ul li:nth-of-type(2) {
+  border-bottom: 1px solid #ccc;
+}
+
+#mycarte[class^="account_"] .g_nav ul li:nth-of-type(3) {
+  border-bottom: none;
+}
+
+.g_nav .toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 74px;
+  border-bottom: 1px solid #ccc;
+}
+
+.g_nav .toggle h2 {
+  position: absolute;
+  top: 30px;
+  left: 56px;
+  width: auto;
+  height: 15px;
+}
+
+.g_nav .toggle h2 img {
+  width: auto;
+  height: 15px;
+}
+
+.g_nav .toggle::before {
+  content: url(../images/menu_btn_open.png);
+  position: absolute;
+  top: 12px;
+  width: 56px;
+  height: 50px;
+}
+
+#inspection .g_nav ul.sub_nav {
+  display: none;
+}
+
+#inspection.data_list .g_nav ul.sub_nav,
+#inspection[class^="interview"] .g_nav ul.sub_nav,
+#inspection.measurement .g_nav ul.sub_nav,
+#inspection.result .g_nav ul.sub_nav,
+#inspection.result_report .g_nav ul.sub_nav,
+#inspection.exercise_menu .g_nav ul.sub_nav,
+#inspection.issue .g_nav ul.sub_nav {
+  display: block;
+}
+
+#inspection .g_nav ul.sub_nav li {
+  padding: 5px 0 5px 30px;
+}
+
+#inspection .g_nav ul.sub_nav li a,
+#mycarte .g_nav ul.sub_nav li a {
+  padding: 10px 30px;
+}
+
+#inspection .g_nav ul li a.sub_toggle {
+  cursor: pointer;
+}
+
+#management .g_nav ul.main_nav > li:nth-of-type(3),
+#management .g_nav ul.main_nav > li:nth-of-type(6),
+#management[class^="account_"] .g_nav ul.main_nav > li:nth-of-type(2),
+#management.staff .g_nav ul.main_nav > li:nth-of-type(2) {
+  border-bottom: 1px solid #ccc;
+}
+
+#management[class^="account_"] .g_nav ul.main_nav > li:nth-of-type(3),
+#management.staff .g_nav ul.main_nav > li:nth-of-type(3) {
+  border-bottom: none;
+}
+
+#inspection .g_nav ul.main_nav > li:nth-of-type(2),
+#inspection .g_nav ul.main_nav > li:nth-of-type(5) {
+  border-bottom: 1px solid #ccc;
+}
+
+/* --------------------------------------------------------------------------------
+   トップページ
+-------------------------------------------------------------------------------- */
+
+@media print {
+  .main_wrap {
+    width: 100%;
+  }
+}
+
+#mycarte[class^="account_link"] .main_wrap {
+  margin: 100px auto 0;
+}
+#alc-maintenance .main_wrap__tit {
+  position: fixed;
+  width: calc(100% - 300px);
+  height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 9999;
+  background-color: #e0e0e1;
+}
+.main_wrap__tit {
+  position: fixed;
+
+  width: calc(100% - 300px);
+
+  height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #f2f2f2;
+  z-index: 9999;
+}
+
+@media print {
+  .main_wrap__tit {
+    position: static;
+  }
+}
+
+#management .main_wrap__tit,
+#alc-maintenance .main_wrap__tit {
+  border-top: 8px solid #b3b3b3;
+}
+
+#inspection .main_wrap__tit {
+  border-top: 8px solid #f87c15;
+}
+
+.main_wrap__tit .menu_tit__list {
+  display: flex;
+}
+
+.main_wrap__tit .menu_tit__list li:not(:last-child)::after {
+  content: "＞";
+  padding: 0 10px;
+}
+
+.main_wrap__tit .menu_tit__list li a {
+  display: inline-block;
+  color: #4d4d4d;
+}
+
+.main_wrap__tit .menu_tit__list li a:hover {
+  color: #f87c15;
+}
+
+.tit_user dl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tit_user dl dt {
+  margin: 0 20px 0 0;
+  font-weight: bold;
+}
+
+.tit_user dl dd {
+  width: 44px;
+}
+
+.main_wrap__detail_tit {
+  position: fixed;
+  top: 74px;
+
+  height: 74px;
+  padding: 10px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  z-index: 7777;
+}
+
+@media print {
+  .main_wrap__detail_tit {
+    position: static;
+  }
+}
+
+/* #management.data_list .main_wrap__detail_tit {
+  padding: 15px 50px 15px 40px;
+  justify-content: space-between;
+  border-bottom: none;
+} */
+
+#management.help .main_wrap__detail_tit {
+  padding: 15px 20px 15px 40px;
+  justify-content: flex-end;
+}
+
+#inspection.inspection_top .main_wrap__detail_tit {
+  padding: 15px 20px 15px 40px;
+  justify-content: flex-end;
+  border-bottom: none;
+}
+
+#management.notice .main_wrap__detail_tit,
+#inspection.notice .main_wrap__detail_tit,
+#mycarte.notice .main_wrap__detail_tit {
+  padding: 15px 48px 15px 58px;
+}
+
+#inspection.tutorial .main_wrap__detail_tit {
+  justify-content: flex-end;
+}
+
+.main_wrap__detail_tit .box1 {
+  display: flex;
+  align-items: baseline;
+}
+
+.main_wrap__detail_tit .box1 h2 {
+  margin: 0 30px 0 0;
+  font-size: 2.2em;
+  font-weight: normal;
+}
+
+.main_wrap__detail_tit .box1 p {
+  font-size: 1.5em;
+}
+
+.main_wrap__detail_tit .box2 a {
+  color: #4d4d4d;
+}
+
+.main_wrap__detail_tit .box2 a:hover {
+  color: #f87c15;
+}
+
+.main_wrap__detail {
+  padding: 148px 0 0;
+}
+
+@media print {
+  .main_wrap__detail {
+    padding: 0;
+  }
+}
+
+.detail_wrap__tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#management .detail_wrap__tit {
+  justify-content: center;
+}
+
+.detail_wrap__tit .logo {
+  width: 244px;
+}
+
+/* ---------- 管理アプリ／検査アプリ／マイカルテアプリ　ログイン　／　マイカルテアプリ　施設アカウント連携 ---------- */
+
+.login_wrap h1,
+.account_new_wrap h1,
+.account_auth_wrap h1 {
+  width: 210px;
+  margin: 25px auto 0 auto;
+  line-height: 1em;
+  margin-top: 25px;
+}
+
+.login_wrap .form_inner .login_input input {
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+@media screen and (min-width: 1322px) and (max-width: 1366px) {
+  .login_wrap .form_inner .login_input input {
+    padding: 8px 10px;
+  }
+  .login_wrap .form_inner .submit_btn button,
+  .login_wrap .form_inner .submit_btn a {
+    padding: 8px !important;
+  }
+  body div.login {
+    font-size: 0.8em !important;
+  }
+  .login_wrap h1,
+  .account_new_wrap h1,
+  .account_auth_wrap h1 {
+    margin-top: 0px !important;
+  }
+  .glo-textNewAccount {
+    margin-bottom: 0px !important;
+  }
+}
+.login_wrap .form_inner .login_input input::placeholder {
+  color: #ccc;
+}
+
+.login_wrap .form_inner .box {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 30px;
+}
+
+.login_wrap .form_inner .box .login_check label {
+  cursor: pointer;
+}
+
+.login_wrap .form_inner .box .login_check input {
+  margin: 0 0.5em 0 0;
+}
+
+.login_wrap .form_inner .box .login_forgot a {
+  color: #4d4d4d;
+}
+
+.login_wrap .form_inner .box .login_forgot a:hover {
+  color: #f87c15;
+}
+
+.login_wrap .form_inner .submit_btn button,
+.login_wrap .form_inner .submit_btn a {
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  background: #4d4d4d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login_wrap .form_inner .submit_btn button:hover,
+.login_wrap .form_inner .submit_btn a:hover {
+  background: #f87c15;
+}
+
+.login_wrap p a {
+  display: inline-block;
+  margin: 0 0 0 1em;
+  color: #4d4d4d;
+}
+
+.login_wrap p a:hover {
+  color: #f87c15;
+}
+
+/* ---------- 管理アプリ　担当者問い合わせ ---------- */
+.staff_wrap {
+  padding: 182px 200px;
+  text-align: center;
+}
+
+.staff_wrap h4 {
+  margin: 0 0 120px;
+  font-size: 1.5em;
+}
+
+.staff_wrap .inquiry__btn a {
+  width: 142px;
+  margin: 0 auto;
+  padding: 13px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+.staff_wrap .inquiry__btn a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- 管理アプリ／検査アプリ／マイカルテアプリ　アプリケーション一覧 ---------- */
+
+@media print {
+  .application_wrap {
+    padding: 0;
+  }
+}
+
+.appli_menu {
+  padding: 0 30px;
+}
+
+.appli_menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  /* 02/07/2021 comment space-between */
+  /* justify-content: space-between; */
+  justify-content: center;
+  /* 02/07/2021 */
+}
+
+.appli_menu ul li {
+  width: 300px;
+}
+
+.appli_menu ul li a {
+  padding: 70px 20px;
+  color: #4d4d4d;
+  font-size: 1.35em;
+  text-align: center;
+  background: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.appli_menu ul li a:hover {
+  background: #d9d9d9;
+}
+
+.appli_sub_menu {
+  padding: 50px 0;
+  border-top: 1px solid #ccc;
+}
+
+.appli_sub_menu ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appli_sub_menu ul li a {
+  padding: 20px;
+  color: #4d4d4d;
+  font-size: 1em;
+  text-align: center;
+  background: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-radius: 48px;
+  font-weight: bold;
+}
+
+.appli_sub_menu ul li:not(:first-child) a {
+  padding: 35px 20px;
+}
+
+.appli_sub_menu ul li a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- 管理アプリ　ダッシュボード ---------- */
+.dashboard_wrap {
+  padding: 0 30px 30px;
+}
+
+.dashboard_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dashboard_box .dashboard_box__inner {
+  width: 33.33%;
+  /* margin: 30px; */
+}
+
+.dashboard_box .dashboard_box__inner dl {
+  text-align: center;
+}
+
+.dashboard_box .dashboard_box__inner dl dd {
+  margin: 10px 0 0;
+  font-size: 1.3em;
+}
+
+/* ----- 円グラフ ----- */
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.canvas-base {
+  /* width: 510px; */
+  position: relative;
+  /* left: -150px; */
+}
+
+p.percentage {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+p.percentage::after {
+  content: "%";
+  font-size: 0.7em;
+}
+
+p.chart_tit {
+  text-align: center;
+}
+
+p.chart_tit a {
+  margin: -10px 0 0;
+  font-size: 1.3em;
+  text-align: center;
+  color: #4d4d4d;
+}
+
+/* ---------- 管理アプリ　データ一覧 ---------- */
+.sign_up__btn a,
+.export__btn a {
+  width: 142px;
+  padding: 8px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+#management.data_list .sign_up__btn a {
+  padding: 9px;
+}
+
+.sign_up__btn a:hover,
+.export__btn a:hover {
+  background: #d9d9d9;
+}
+
+.data_list_menu {
+  padding: 0 20px 0 40px;
+}
+
+/* .data_list_menu__inner table {
+  width: 100%;
+} */
+
+/* .data_list_menu__inner table td {
+  text-align: center;
+} */
+
+/* .data_list_menu__inner table td.col1 {
+  width: 3%;
+}
+
+.data_list_menu__inner table td.col3 {
+  width: 10%;
+}
+
+.data_list_menu__inner table td.col4,
+.data_list_menu__inner table td.col5 {
+  width: 6%;
+}
+
+.data_list_menu__inner table td.col7,
+.data_list_menu__inner table td.col8,
+.data_list_menu__inner table td.col10 {
+  width: 9%;
+}
+
+.data_list_menu__inner table td.col2,
+.data_list_menu__inner table td.col6,
+.data_list_menu__inner table td.col9,
+.data_list_menu__inner table td.col11 {
+  width: 12%;
+} */
+
+.data_list_menu__inner table thead {
+  position: fixed;
+  display: table;
+}
+
+.data_list_menu__inner table thead td {
+  position: relative;
+  padding: 6px;
+  font-size: 0.9em;
+  background: #fff;
+  border-bottom: 2px solid #b2b2b2;
+}
+
+.data_list_menu__inner table thead td:not(.col1)::before {
+  content: url(../images/sort_arrow.png);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.data_list_menu__inner table tbody {
+  display: table;
+}
+
+.data_list_menu__inner table tbody td {
+  padding: 13.5px 0px;
+  font-size: 0.9em;
+  border-bottom: 1px solid #b2b2b2;
+}
+
+.data_list_menu__inner table tbody td.red {
+  color: #ff6464;
+}
+
+.data_list_menu__btn_wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0 0;
+}
+
+/* ---------- 管理アプリ　データ一覧（人別） ---------- */
+.data_base {
+  margin: 50px 0 0;
+  padding: 0 15px 0 48px;
+}
+
+.data_base__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.data_base__inner p {
+  font-size: 2em;
+  text-align: center;
+}
+
+.data_base__btn_wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0 0;
+}
+
+/* ---------- モーダル（デフォルトからのカスタマイズ） ---------- */
+.blocker {
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  box-shadow: none;
+}
+
+.modal a.close-modal {
+  display: none;
+}
+
+/* ---------- モーダル　スタイル調整 ---------- */
+/* ---------- エクスポート用 ---------- */
+#modal_export {
+  padding: 50px 60px 20px;
+}
+
+#modal_export .modal_wrap {
+  text-align: center;
+}
+
+#modal_export form ul {
+  display: inline-block;
+  /* font-size: 1.3em; */
+  text-align: left;
+}
+
+#modal_export form ul li:not(:last-child) {
+  margin: 0 0 10px;
+}
+
+#modal_export input {
+  margin: 0 1em 0 0;
+}
+
+#modal_export .btn_wrap {
+  margin: 50px 0 30px;
+}
+
+#modal_export .btn_wrap ul li:not(:last-child) {
+  margin: 0 0 20px;
+}
+
+#modal_export .btn_wrap ul li a {
+  padding: 10px;
+  color: #4d4d4d;
+  font-size: 1.1em;
+  background: #e6e6e6;
+  border-radius: 23px;
+}
+
+#modal_export .modal_close a {
+  display: inline-block;
+  padding: 10px 40px;
+  color: #4d4d4d;
+  font-size: 1.1em;
+  border: 2px solid #e6e6e6;
+  border-radius: 25px;
+}
+
+#modal_export .modal_close a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- 管理アプリ　新規登録　／　検査アプリ　アカウント連携 ---------- */
+#inspection.account .detail_wrap {
+  padding: 0 15px 0 48px;
+}
+
+#inspection.account .input_wrap {
+  padding: 220px 200px;
+}
+
+#management.input .input_wrap .form_inner,
+#inspection.account .input_wrap .form_inner {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 70px;
+}
+
+#inspection.account .input_wrap .form_inner input {
+  width: 350px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#management.input .input_wrap .form_inner input::placeholder,
+#inspection.account .input_wrap .form_inner input::placeholder {
+  color: #ccc;
+}
+/* anEditStart */
+#management.input .input_wrap .form_inner .submitPassword {
+  width: 350px;
+}
+/* anEditEnd */
+
+#management.input .input_wrap .form_inner button,
+#management.input .input_wrap .sub_box ul li a,
+#inspection.account .input_wrap .form_inner button,
+#inspection.account .input_wrap .sub_box ul li a {
+  width: 142px;
+  padding: 8px;
+  color: #4d4d4d;
+  font-size: 1em;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+#management.input .input_wrap .url_copy a,
+#inspection.account .input_wrap .url_copy a {
+  padding: 13px;
+  color: #4d4d4d;
+  font-size: 1em;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#management.input .input_wrap .form_inner button:hover,
+#management.input .input_wrap .url_copy a:hover,
+#management.input .input_wrap .sub_box ul li a:hover,
+#inspection.account .input_wrap .form_inner button:hover,
+#inspection.account .input_wrap .url_copy a:hover,
+#inspection.account .input_wrap .sub_box ul li a:hover {
+  background: #d9d9d9;
+}
+
+#management.input .input_wrap .sub_box,
+#inspection.account .input_wrap .sub_box {
+  margin: 70px 0 0;
+}
+
+#management.input .input_wrap .sub_box ul,
+#inspection.account .input_wrap .sub_box ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#management.input .input_wrap .sub_box ul li:first-child,
+#inspection.account .input_wrap .sub_box ul li:first-child {
+  width: 350px;
+  text-align: center;
+}
+
+#management.input .input_wrap .sub_box ul li:first-child img,
+#inspection.account .input_wrap .sub_box ul li:first-child img {
+  width: 100px;
+}
+
+/* ---------- 管理アプリ　お知らせ ---------- */
+#inspection.notice .detail_wrap {
+  padding: 0 20px 0 40px;
+}
+
+.notice_list__check {
+  position: fixed;
+  /* width: 917px; */
+  padding: 12.5px 10px;
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+}
+
+.notice_list__tit {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.notice_list__tit img {
+  width: 15px;
+  height: 8px;
+  margin: 0 1em 0 0;
+}
+
+.notice_list__detail dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.notice_list__detail dl dt {
+  width: 85%;
+}
+
+.unread_wrap .notice_list__detail dl dt,
+.unread_wrap .notice_list__detail dl dd {
+  font-weight: bold;
+}
+
+.notice_list__detail dl dt input {
+  margin: 0 1em 0 0;
+}
+
+.notice_list__detail dl dd {
+  width: 15%;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.notice_list__detail dl dt,
+.notice_list__detail dl dd {
+  padding: 12.5px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.read_wrap {
+  background: #f2f2f2;
+}
+
+/* ---------- 管理アプリ　設定 ---------- */
+.setting_list__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 595px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.setting_list__inner p {
+  font-size: 2em;
+  text-align: center;
+}
+
+/* ---------- 管理アプリ　ヘルプ　／　検査アプリ　ヘルプ　／　検査アプリ　ヘルプ＞受診者チュートリアル ---------- */
+
+.help_menu__inner {
+  display: block;
+  height: auto;
+  border: none;
+}
+
+.help_menu__inner p {
+  font-size: 2em;
+  text-align: center;
+}
+
+.help_menu__inner .help_menu_list li:nth-child(odd) {
+  background: #f0f0f0;
+  /* border-radius: 10px; */
+}
+.help_menu__inner .help_menu_list li {
+  background: white;
+  /* border-radius: 10px; */
+}
+.help_menu__inner .help_menu_list li a {
+  position: relative;
+  padding: 13px;
+  color: #4d4d4d;
+}
+
+.help_menu__inner .help_menu_list li a::after {
+  content: url(../images/link_arrow.png);
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 24px;
+}
+
+.help_menu__inner .help_menu_list li a:hover::after {
+  content: url(../images/link_arrow_on.png);
+  position: absolute;
+}
+
+/* ---------- 管理アプリ　FAQ ---------- */
+.faq_list__inner h4 {
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.faq_list .faq_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.faq_list .faq_wrap .box {
+  width: 45%;
+  margin: 0 0 60px;
+}
+
+.faq_list .faq_wrap .box h5 {
+  margin: 0 0 10px;
+  font-size: 1em;
+}
+
+.faq_list .faq_wrap .box ul li:not(:last-child) {
+  margin: 0 0 10px;
+}
+
+.faq_list .faq_wrap .box ul li a {
+  color: #4d4d4d;
+}
+
+.faq_list .faq_wrap .box ul li a:hover {
+  color: #f87c15;
+}
+
+/* ---------- 管理アプリ　FAQ内容 ---------- */
+.faq_sample_wrap__inner h4 {
+  margin: 0 0 40px;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* ---------- 管理アプリ　問い合わせ ---------- */
+
+.inquiry_menu__inner ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inquiry_menu .inquiry_menu__inner ul li {
+  width: 100%;
+}
+
+.faq_inquiry_menu a,
+.inquiry_menu .inquiry_menu__inner ul li a,
+.glo-myCarte-faqDetail .inquiry_menu__inner > ul > li > a,
+.glo-management-faqDetail .inquiry_menu__inner > ul > li > a {
+  color: #4d4d4d;
+  text-align: center;
+  border: 5px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.faq_inquiry_menu a:hover,
+.inquiry_menu .inquiry_menu__inner ul li a:hover {
+  background: #d9d9d9;
+}
+
+.inquiry_menu .inquiry_menu__inner ul li:first-child {
+  margin: 0 0 60px;
+}
+
+.faq_inquiry_menu {
+  margin: 80px 0 0;
+}
+
+.faq_inquiry_menu,
+.inquiry_menu .inquiry_menu__inner ul li.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+#mycarte[class*="faq_sample"] .faq_inquiry_menu {
+  display: block;
+}
+
+.faq_inquiry_menu dl,
+.inquiry_menu .inquiry_menu__inner ul li.menu dl,
+.glo-management-faqDetail .inquiry_menu__inner ul dl {
+  padding: 55px 75px;
+  text-align: center;
+}
+
+.faq_inquiry_menu dl dt,
+.inquiry_menu .inquiry_menu__inner ul li.menu dl dt,
+.glo-management-faqDetail .inquiry_menu__inner ul li:last-child a dl dt,
+.glo-management-faqDetail .inquiry_menu__inner ul li.phone dl dt {
+  width: 80px;
+  margin: 0 auto 25px;
+}
+
+#mycarte[class*="faq_sample"] .faq_inquiry_menu dl dt {
+  margin: 0 auto;
+}
+
+.inquiry_menu .inquiry_menu__inner ul li.menu dl dd.tit {
+  font-size: 1.8em;
+}
+
+/* ---------- 管理アプリ　問い合わせフォーム ---------- */
+
+.inquiry_form_nav {
+  display: flex;
+}
+
+.inquiry_form_nav li {
+  position: relative;
+  font-size: 1.2em;
+}
+
+.inquiry_form_nav li.on {
+  color: #f87c15;
+  font-weight: bold;
+}
+
+.inquiry_form_nav li:not(:last-child) {
+  margin: 0 80px 0 0;
+}
+
+.inquiry_form_nav li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  width: 40px;
+  height: 1px;
+  background: #ccc;
+  transform: translateY(-50%);
+}
+
+.inquiry_form_wrap__inner p {
+  line-height: 2;
+}
+
+.inquiry_form_wrap__inner .note {
+  margin: 0 0 60px;
+}
+
+.inquiry_form_wrap__inner .note p:not(:last-child) {
+  margin: 0 0 30px;
+}
+
+.inquiry_form_wrap__inner h4 {
+  margin: 0 0 10px;
+}
+
+.inquiry_form_wrap__inner .privacy_wrap {
+  height: 270px;
+  overflow-y: scroll;
+  margin: 0 0 60px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.inquiry_form_wrap__inner .privacy_wrap h3 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.inquiry_form_wrap__inner .privacy_wrap h3:not(:first-child) {
+  margin: 30px 0 0;
+}
+
+.inquiry_form_wrap__inner dl {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid #ccc;
+}
+
+.inquiry_form_wrap__inner dl dt {
+  display: flex;
+  align-items: center;
+  /* width: 300px; */
+  width: 20%;
+  background: #f2f2f2;
+}
+
+.inquiry_form_wrap__inner dl dt,
+.inquiry_form_wrap__inner dl dd {
+  padding: 35px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.inquiry_form_wrap__inner dl dd {
+  width: 80%;
+}
+
+.inquiry_form_wrap__inner dl dd label {
+  cursor: pointer;
+}
+
+.inquiry_form_wrap__inner dl dd input#agree {
+  margin: 0 0.5em 0 0;
+}
+
+.inquiry_form_wrap__inner dl dd input[type="text"],
+.inquiry_form_wrap__inner dl dd textarea {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+
+.inquiry_form_wrap__inner dl dd textarea {
+  max-width: 100%;
+  height: 210px;
+}
+
+.inquiry_form_wrap__inner form .submit_btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 0 0;
+}
+
+.inquiry_form_wrap__inner form .submit_btn a {
+  padding: 10px;
+  color: #4d4d4d;
+  text-align: center;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+.inquiry_form_wrap__inner form .submit_btn a:hover {
+  background: #d9d9d9;
+}
+/* AnEditStart swap type from a to button-19/02/2020 */
+.inquiry_form_wrap__inner form .submit_btn button {
+  padding: 10px;
+  color: #4d4d4d;
+  background-color: white;
+  text-align: center;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  /* sữa cỡ chữ tại */
+  font-size: 1em;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+    Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.inquiry_form_wrap__inner form .submit_btn button:hover {
+  background: #d9d9d9;
+  cursor: pointer;
+}
+/* AnEditEnd */
+
+#management[class*="inquiry_form_confirm"] .submit_btn ul,
+#inspection.inquiry_form_confirm .submit_btn ul,
+#mycarte[class*="inquiry_form_confirm"] .submit_btn ul {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+#management[class*="inquiry_form_confirm"] .submit_btn ul li:not(:last-child),
+#inspection.inquiry_form_confirm .submit_btn ul li:not(:last-child),
+#mycarte[class*="inquiry_form_confirm"] .submit_btn ul li:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+#management[class*="inquiry_form_confirm"] .submit_btn ul li a,
+#inspection.inquiry_form_confirm .submit_btn ul li a,
+#mycarte[class*="inquiry_form_confirm"] .submit_btn ul li a {
+  width: 142px;
+}
+
+/* ---------- 管理アプリ　アカウント情報編集　／　マイカルテアプリ　アカウント情報編集　／　マイカルテアプリ　運動器ID ---------- */
+.motionid_id_list {
+  margin: 50px 0 0;
+  padding: 0 20px 0 40px;
+}
+
+.account_top_list__inner .box,
+.account_sub_list__inner .box,
+.motionid_id_list__inner .box {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.account_top_list__inner .box:not(:last-child),
+.account_sub_list__inner .box:not(:last-child),
+.motionid_id_list__inner .box:not(:last-child) {
+  margin: 0 0 20px;
+}
+
+.account_top_list__inner .box dl,
+.account_sub_list__inner .box > dl,
+.motionid_id_list__inner .box dl {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account_top_list__inner .box > dl > dt,
+.account_sub_list__inner .box > dl > dt {
+  width: 25%;
+  font-weight: bold;
+}
+
+.motionid_id_list__inner .box > dl > dt {
+  width: 20%;
+  font-weight: bold;
+}
+
+.account_top_list__inner .box dl dd.data,
+.account_sub_list__inner .box dl dd.data {
+  width: 50%;
+  padding: 20px 0;
+  font-size: 1em;
+}
+
+.motionid_id_list__inner .box dl dd.data {
+  width: 55%;
+  font-size: 1.1em;
+}
+
+.motionid_id_list__inner .box dl dd.data.input_data {
+  font-weight: bold;
+}
+
+.account_top_list__inner .box dl dd.data ul li:not(:last-child),
+.motionid_id_list__inner .box dl dd.data ul li:not(:last-child) {
+  margin: 0 0 15px;
+}
+
+.motionid_id_list__inner .box dl dd.data .qr_code {
+  margin: 30px 0 0;
+  text-align: center;
+}
+
+.motionid_id_list__inner .box dl dd.data .qr_code img {
+  width: auto;
+  max-width: 100%;
+}
+
+.account_top_list__inner .box dl dd.data dl,
+.account_sub_list__inner .box dl dd.data dl,
+.motionid_id_list__inner .box dl dd.data dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.account_top_list__inner .box dl dd.data dl.plan dt {
+  width: 11.5em;
+}
+
+.account_top_list__inner .box dl dd.data dl.plan dd {
+  width: calc(100% - 11.5em);
+}
+
+.account_top_list__inner .box dl dd.data dl.login dt {
+  width: 11.5em;
+}
+
+.account_top_list__inner .box dl dd.data dl.login dd {
+  width: calc(100% - 9.5em);
+}
+
+.account_top_list__inner .box dl dd.data dl dd:not(:last-child),
+.account_sub_list__inner .box dl dd.data dl dd:not(:last-child) {
+  margin: 0 0 15px;
+}
+
+.account_top_list__inner .box dl dd.edit__btn,
+.account_sub_list__inner .box dl dd.edit__btn,
+.motionid_id_list__inner .box dl dd.edit__btn {
+  width: 8em;
+  align-self: flex-end;
+}
+
+.motionid_id_list__inner .box dl dd.edit__btn {
+  width: 8em;
+  align-self: center;
+}
+
+.motionid_id_list__inner .box dl dd.edit__btn.center a:last-child {
+  margin: 20px 0 0;
+}
+
+.account_top_list__inner .box dl dd.edit__btn a,
+/* anEditStartThayButton->Link */
+.account_sub_list__inner .box dl dd.edit__btn button,
+/* anEditEndThayButton->Link */
+.account_sub_list__inner .box dl dd.edit__btn a,
+.motionid_id_list__inner .box dl dd.edit__btn a {
+  padding: 12px;
+  color: #4d4d4d;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+.account_sub_list__inner .box dl dd.edit__btn button {
+  width: 100%;
+}
+
+.account_top_list__inner .box dl dd.edit__btn a:hover,
+/* anEditStartThayButton->Link */
+.account_sub_list__inner .box dl dd.edit__btn button:hover,
+/* anEditEndThayButton->Link */
+.account_sub_list__inner .box dl dd.edit__btn a:hover,
+.motionid_id_list__inner .box dl dd.edit__btn a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- 管理アプリ　登録施設情報　／　検査アプリ　ゲスト受付　／　マイカルテアプリ　運動器ID編集 ---------- */
+.motionid_edit_wrap {
+  margin: 50px 0;
+  padding: 0 20px 0 40px;
+}
+
+.motionid_edit_wrap {
+  margin: 72px 0 100px;
+}
+
+/* .motionid_edit_wrap .form_inner dl {
+  width: 840px;
+} */
+
+.account_edit_wrap .form_inner dl dt,
+.motionid_edit_wrap .form_inner dl dt {
+  margin: 0 0 5px;
+}
+
+#inspection.guest .account_edit_wrap .form_inner dl dt,
+#mycarte.motionid_edit .motionid_edit_wrap .form_inner dl dt {
+  font-weight: bold;
+}
+
+.account_edit_wrap .form_inner dl dd,
+.motionid_edit_wrap .form_inner dl dd {
+  position: relative;
+}
+
+.account_edit_wrap .form_inner dl dd:not(:last-child) {
+  margin: 0 0 25px;
+}
+
+.account_edit_wrap .form_inner dl dd.block_end {
+  margin: 0 0 50px;
+}
+
+.account_edit_wrap .form_inner dl dd input,
+.account_edit_wrap .form_inner dl dd select,
+.motionid_edit_wrap .form_inner dl dd input,
+.motionid_edit_wrap .form_inner dl dd select {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+
+.account_edit_wrap .form_inner dl dd input::placeholder,
+.motionid_edit_wrap .form_inner dl dd input::placeholder {
+  color: #ccc;
+}
+
+.account_edit_wrap .form_inner dl dd.zip_list input {
+  width: 6em;
+}
+
+.account_edit_wrap .form_inner dl dd.zip_list span {
+  padding: 0 8px;
+}
+
+.account_edit_wrap .form_inner dl dd.arrow {
+  width: 270px;
+}
+
+.account_edit_wrap .form_inner dl dd.arrow select {
+  padding: 16px 20px;
+  background: #f0f0f0;
+  appearance: none;
+  cursor: pointer;
+}
+
+.account_edit_wrap .form_inner dl dd.arrow::after {
+  /* content: url(../images/select_arrow.png); */
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.account_edit_wrap .form_inner .edit_save__btn,
+.motionid_edit_wrap .form_inner .edit_save__btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.motionid_edit_wrap .form_inner .edit_save__btn {
+  margin: 300px 0 50px;
+}
+
+.account_edit_wrap .form_inner .edit_save__btn button,
+.motionid_edit_wrap .form_inner .edit_save__btn a {
+  width: 142px;
+  padding: 10px;
+  color: #4d4d4d;
+  font-size: 1em;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.account_edit_wrap .form_inner .edit_save__btn button:hover,
+.motionid_edit_wrap .form_inner .edit_save__btn a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- 管理アプリ　サブアカウント情報一覧 ---------- */
+/* .account_sub_list {
+  margin: 50px 0 0;
+  padding: 0 20px 0 40px;
+} */
+
+.account_sub_list__inner .box.resume {
+  background: #f2f2f2;
+}
+
+.account_sub_list__inner .box dl dd.data dl.login_sub dt {
+  width: 11.5em;
+}
+
+.account_sub_list__inner .box dl dd.data dl.login_sub dd {
+  width: calc(100% - 11.5em);
+}
+
+.account_sub_list__inner .box dl dd.edit__btn a.resume__btn {
+  color: #fff;
+  background: #4d4d4d;
+}
+/* AnEditStart-Button_resume */
+.account_sub_list__inner .box dl dd.edit__btn button.resume__btn {
+  color: #fff;
+  background: #4d4d4d;
+}
+/* AnEditEnd-Button_resume */
+
+.account_sub_list__inner .box dl dd.edit__btn a.resume__btn:hover {
+  background: #f87c15;
+  border: 1px solid #f87c15;
+}
+
+/* AnEditStart-Button_resume */
+.account_sub_list__inner .box dl dd.edit__btn button.resume__btn:hover {
+  background: #f87c15;
+  border: 1px solid #f87c15;
+}
+/* AnEditEnd-Button_resume */
+
+.account_sub_list__inner .box dl dd.edit__btn a:not(:last-child) {
+  margin: 0 0 20px;
+}
+
+.account_sub_list .add_box {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0 50px;
+}
+
+.account_sub_list .add_box a {
+  display: inline-block;
+  color: #4d4d4d;
+}
+
+.account_sub_list .add_box a dl dt {
+  position: relative;
+  width: 50px;
+  margin: 0 auto 15px;
+}
+
+.account_sub_list .add_box a dl dd {
+  font-size: 1.1em;
+}
+
+.account_sub_list .add_box a:hover {
+  color: #f87c15;
+}
+
+.account_sub_list .add_box a:hover dl dt::after {
+  content: url(../images/add_btn_on.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ---------- モーダル　スタイル調整 ---------- */
+/* ---------- 削除用 ---------- */
+#modal_delete {
+  padding: 50px 100px;
+}
+
+#modal_delete .modal_wrap {
+  text-align: center;
+}
+
+#modal_delete p {
+  margin: 0 0 60px;
+  font-size: 1.1em;
+}
+
+#modal_delete ul {
+  display: inline-block;
+}
+
+#modal_delete ul li:not(:last-child) {
+  margin: 0 0 20px;
+}
+
+#modal_delete ul li a {
+  width: 162px;
+  padding: 10px;
+  color: #4d4d4d;
+  text-align: center;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+#modal_delete ul li a:hover {
+  background: #d9d9d9;
+}
+/* ---------- 管理アプリ　サブアカウント情報編集 ---------- */
+/* .account_sub_edit_wrap {
+  margin: 50px 0 0;
+  padding: 0 20px 0 40px;
+} */
+
+.account_sub_edit_wrap__inner .box {
+  padding: 20px;
+  border: 2px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner {
+  margin: 70px 80px 20px;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .account_sub_id {
+  display: flex;
+  margin: 0 0 70px;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .account_sub_id dt {
+  width: 40%;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .account_sub_id dd {
+  width: 60%;
+  font-weight: bold;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .account_sub_input dt {
+  margin: 0 0 5px;
+}
+
+.account_sub_edit_wrap__inner
+  .box
+  .box__inner
+  .account_sub_input
+  dt.account_sub_name {
+  margin: 0px 0 5px;
+}
+
+.account_sub_edit_wrap__inner
+  .box
+  .box__inner
+  .account_sub_input
+  dd:not(:last-child) {
+  margin: 0 0 25px;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .account_sub_input dd.note {
+  position: relative;
+}
+
+.account_sub_edit_wrap__inner
+  .box
+  .box__inner
+  .account_sub_input
+  dd.note::after {
+  content: "※最低8文字以上";
+  position: absolute;
+  right: 0;
+  bottom: -25px;
+  font-size: 0.8em;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .account_sub_input dd input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+
+.account_sub_edit_wrap__inner
+  .box
+  .box__inner
+  .account_sub_input
+  dd
+  input::placeholder {
+  color: #ccc;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .sub_box {
+  display: flex;
+  justify-content: space-between;
+  margin: 70px 0 0;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .sub_box dl {
+  width: 42%;
+  text-align: center;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .sub_box dl dt {
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .sub_box dl dd ul li {
+  margin: 20px 0 0;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .sub_box dl dd ul li input {
+  display: none;
+}
+
+.account_sub_edit_wrap__inner .box .box__inner .sub_box dl dd ul li label {
+  display: block;
+  padding: 12px;
+  font-weight: bold;
+  border: 1px solid #4d4d4d;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.account_sub_edit_wrap__inner
+  .box
+  .box__inner
+  .sub_box
+  dl
+  dd
+  ul
+  li
+  input:checked
+  + label {
+  color: #fff;
+  background: #f87c15;
+  border: 1px solid #f87c15;
+}
+
+.account_sub_edit_wrap__inner .edit_save__btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 0 0;
+}
+
+.account_sub_edit_wrap__inner .edit_save__btn a {
+  width: 142px;
+  padding: 13px;
+  color: #4d4d4d;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+.account_sub_edit_wrap__inner .edit_save__btn a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- サブアカウントを追加 ---------- */
+
+.account_sub_add_wrap__inner .box {
+  padding: 20px;
+  border: 2px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.account_sub_add_wrap__inner .box .box__inner {
+  margin: 70px 80px 20px;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .account_sub_id {
+  display: flex;
+  margin: 0 0 25px;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .account_sub_id dt {
+  width: 40%;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .account_sub_id dd {
+  width: 60%;
+  font-weight: bold;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .account_sub_input dt {
+  margin: 0 0 5px;
+}
+
+.account_sub_add_wrap__inner
+  .box
+  .box__inner
+  .account_sub_input
+  dt.account_sub_name {
+  margin: 0px 0 5px;
+}
+
+.account_sub_add_wrap__inner
+  .box
+  .box__inner
+  .account_sub_input
+  dd:not(:last-child) {
+  margin: 0 0 25px;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .account_sub_input dd.note {
+  position: relative;
+}
+
+.account_sub_add_wrap__inner
+  .box
+  .box__inner
+  .account_sub_input
+  dd.note::after {
+  content: "※最低8文字以上";
+  position: absolute;
+  right: 0;
+  bottom: -25px;
+  font-size: 0.8em;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .account_sub_input dd input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+
+.account_sub_add_wrap__inner
+  .box
+  .box__inner
+  .account_sub_input
+  dd
+  input::placeholder {
+  color: #ccc;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .sub_box {
+  display: flex;
+  justify-content: space-between;
+  margin: 70px 0 0;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .sub_box dl {
+  width: 42%;
+  text-align: center;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .sub_box dl dt {
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .sub_box dl dd ul li {
+  margin: 20px 0 0;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .sub_box dl dd ul li input {
+  display: none;
+}
+
+.account_sub_add_wrap__inner .box .box__inner .sub_box dl dd ul li label {
+  display: block;
+  padding: 12px;
+  font-weight: bold;
+  border: 1px solid #4d4d4d;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.account_sub_add_wrap__inner
+  .box
+  .box__inner
+  .sub_box
+  dl
+  dd
+  ul
+  li
+  input:checked
+  + label {
+  color: #fff;
+  background: #f87c15;
+  border: 1px solid #f87c15;
+}
+
+.account_sub_add_wrap__inner .edit_save__btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 0 0;
+}
+
+.account_sub_add_wrap__inner .edit_save__btn a {
+  width: 142px;
+  padding: 13px;
+  color: #4d4d4d;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+.account_sub_add_wrap__inner .edit_save__btn a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- 検査アプリ　健診受付 ---------- */
+.reception_new__btn a {
+  width: 142px;
+  padding: 9px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  float: right;
+}
+
+.reception_new__btn a:hover,
+.reception_list__table tbody td .manage_btn:hover,
+.reception_list__table tbody td .manage_sub_btn a:hover {
+  background: #d9d9d9;
+}
+
+.reception_list {
+  padding: 0 20px 0 40px;
+}
+
+.reception_list__table {
+  width: 100%;
+}
+
+.reception_list__table thead {
+  position: fixed;
+  display: table;
+  width: 917px;
+}
+
+.reception_list__table thead td {
+  font-weight: bold;
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+}
+
+.reception_list__table tbody {
+  display: table;
+  width: 917px;
+  margin: 46px 0 0;
+}
+
+.reception_list__table tbody td {
+  border-bottom: 1px solid #ccc;
+}
+
+.reception_list__table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.reception_list__table td.col1 {
+  width: 3%;
+}
+
+.reception_list__table td.col2 {
+  width: 12%;
+}
+
+.reception_list__table td.col3 {
+  width: 15%;
+}
+
+.reception_list__table td.col4 {
+  width: 20%;
+}
+
+.reception_list__table td.col5 {
+  width: 25%;
+}
+
+.reception_list__table td.col6 {
+  width: 25%;
+}
+
+.reception_list__table tbody tr.progress {
+  background: #f2f2f2;
+}
+
+.reception_list__table tbody tr.complete {
+  background: #4d4d4d;
+}
+
+.reception_list__table tbody tr.complete td {
+  color: #fff;
+}
+
+.reception_list__table tbody td.ws_wrap {
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.reception_list__table tbody td .manage_btn {
+  margin: 0 0 10px;
+  padding: 6px;
+  color: #4d4d4d;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+.reception_list__table tbody td .manage_sub_btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reception_list__table tbody td .manage_sub_btn.delete_only {
+  justify-content: flex-end;
+}
+
+.reception_list__table tbody td .manage_sub_btn li {
+  width: 30%;
+}
+
+.reception_list__table tbody td .manage_sub_btn li a {
+  padding: 6px;
+  color: #4d4d4d;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+/* ---------- 検査アプリ　新規受診者登録 ---------- */
+.choice_new_wrap {
+  margin: 30px 0 0;
+  padding: 0 15px 0 48px;
+}
+
+.choice_new_wrap__btn {
+  margin: 0 0 20px;
+}
+
+.choice_new_wrap__btn ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.choice_new_wrap__btn ul li:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+.choice_new_wrap__btn ul li a {
+  width: 162px;
+  padding: 13px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+.choice_new_wrap__btn ul li a:hover {
+  background: #d9d9d9;
+}
+
+.search_wrap {
+  margin: 0 0 30px;
+}
+
+#management.data_list .search_wrap {
+  margin: 0;
+}
+
+.search_wrap .form_inner {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* #management.data_list .search_wrap .form_inner {
+  position: relative;
+} */
+
+#management.data_list .search_wrap .form_inner::after {
+  content: url(../images/search_ico.png);
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.search_wrap .form_inner input {
+  /* width: 240px; */
+  padding: 6px 10px;
+  /* border: 1px solid #b3b3b3; */
+  border-radius: 5px;
+}
+
+#management.data_list .search_wrap .form_inner input {
+  /* width: 300px; */
+  padding: 6px 10px 6px 45px;
+}
+
+.search_wrap .form_inner input::placeholder {
+  color: #ccc;
+}
+
+/* .search_wrap .form_inner button {
+  width: 4em;
+  margin: 0 0 0 10px;
+  padding: 6px 10px;
+  color: #4d4d4d;
+  font-size: 1em;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+#management.data_list .search_wrap .form_inner button {
+  color: #fff;
+  background: #4d4d4d;
+  border: none;
+}
+
+.search_wrap .form_inner button:hover {
+  background: #d9d9d9;
+}
+
+#management.data_list .search_wrap .form_inner button:hover {
+  background: #f87c15;
+}
+
+.choice_new_wrap__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.choice_new_wrap__inner p {
+  font-size: 2em;
+  text-align: center;
+}
+
+.next__btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0 0;
+}
+
+.next__btn a {
+  width: 142px;
+  padding: 13px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+.next__btn a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- 検査アプリ　健診内容登録 ---------- */
+.package_wrap {
+  margin: 50px 0;
+  padding: 0 15px 0 48px;
+}
+
+.package_wrap .form_inner input {
+  display: none;
+}
+
+.package_wrap .form_inner .group1,
+.package_wrap .form_inner .group2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 30px;
+}
+
+.package_wrap .form_inner .group2 {
+  margin: 0;
+}
+
+.package_wrap .form_inner .group1 li,
+.package_wrap .form_inner .group2 li {
+  width: 48.5%;
+  margin: 0 0 3%;
+}
+
+.package_wrap .form_inner .group2 li {
+  width: 28%;
+}
+
+.package_wrap .form_inner .group1 li label,
+.package_wrap .form_inner .group2 li label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 1.35em;
+  font-weight: bold;
+  text-align: center;
+  border: 4px solid #e6e6e6;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.package_wrap .form_inner .group2 li label {
+  height: 100px;
+  font-size: 1.15em;
+}
+
+.package_wrap .form_inner .group1 li label.not_select,
+.package_wrap .form_inner .group2 li label.not_select {
+  color: #9e9e9e;
+  background: #d9d9d9;
+  cursor: auto;
+}
+
+.package_wrap .form_inner input#group1_a:checked ~ .group1 li label.group1_a,
+.package_wrap .form_inner input#group1_b:checked ~ .group1 li label.group1_b,
+.package_wrap .form_inner input#group1_c:checked ~ .group1 li label.group1_c,
+.package_wrap .form_inner input#group2_a:checked ~ .group2 li label.group2_a,
+.package_wrap .form_inner input#group2_b:checked ~ .group2 li label.group2_b,
+.package_wrap .form_inner input#group2_c:checked ~ .group2 li label.group2_c,
+.package_wrap .form_inner input#group2_d:checked ~ .group2 li label.group2_d,
+.package_wrap .form_inner input#group2_e:checked ~ .group2 li label.group2_e {
+  color: #fff;
+  background: #4d4d4d;
+}
+
+.package_wrap .form_inner .package_save__btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 50px 0;
+}
+
+.package_wrap .form_inner .package_save__btn a {
+  width: 142px;
+  padding: 10px;
+  color: #4d4d4d;
+  font-size: 1em;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.package_wrap .form_inner .package_save__btn a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- 検査アプリ　健診管理TOP　／　健診管理TOP（記入例） ---------- */
+.data_list_wrap {
+  margin: 30px 0 0;
+  padding: 0 20px 0 40px;
+}
+
+.print__btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.print__btn a {
+  width: 142px;
+  padding: 13px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+#management.help .print__btn a {
+  padding: 9px;
+}
+
+.print__btn a:hover {
+  background: #d9d9d9;
+}
+
+.data_list_wrap__inner {
+  margin: 30px 0 0;
+}
+
+.data_list_wrap__inner .box:not(:last-child) {
+  margin: 0 0 50px;
+}
+
+.data_list_wrap__inner .box .box_tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 20px;
+  padding: 0 10px 5px;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.data_list_wrap__inner .box .box_tit.checked {
+  position: relative;
+  padding: 10px;
+  color: #fff;
+  background: #4d4d4d;
+  border-bottom: none;
+}
+
+.data_list_wrap__inner .box .box_tit.checked::after {
+  content: url(../images/check_wh.png);
+  position: absolute;
+  right: 200px;
+  width: 30px;
+  height: 23px;
+}
+
+.data_list_wrap__inner .box .box_tit h3 {
+  font-size: 1.15em;
+}
+
+.data_list_wrap__inner .box .box_detail {
+  padding: 0 40px;
+}
+
+.data_list_wrap__inner .box .box_detail dl,
+.data_list_wrap__inner .box .box_detail dl + ul {
+  display: flex;
+}
+
+.data_list_wrap__inner .box .box_detail dl + ul {
+  margin: 15px 0 0;
+}
+
+.data_list_wrap__inner .box .box_detail dl + ul li:not(:last-child) {
+  margin: 0 70px 0 0;
+}
+
+.data_list_wrap__inner .box .box_detail > ul li:not(:last-child) {
+  margin: 0 0 10px;
+}
+
+.data_list_wrap__inner .box .box_detail > ul.checked li {
+  position: relative;
+}
+
+.data_list_wrap__inner .box .box_detail > ul.checked li::after {
+  content: url(../images/check.png);
+  position: absolute;
+  right: 160px;
+  width: 30px;
+  height: 23px;
+}
+
+.link__btn a {
+  position: relative;
+}
+
+.link__btn a:hover img {
+  opacity: 0;
+}
+
+.link__btn a:hover::after {
+  content: url(../images/link_arrow_on.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ---------- モーダル　スタイル調整 ---------- */
+/* ---------- 未完了アラート用 ---------- */
+#modal_incomplete {
+  padding: 50px 30px 20px;
+}
+
+#modal_incomplete p.tit {
+  margin: 0 0 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#modal_incomplete ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0 0;
+}
+
+#modal_incomplete ul li a {
+  width: 142px;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  background: #4d4d4d;
+  border-radius: 10px;
+}
+
+#modal_incomplete ul li a:hover {
+  background: #f87c15;
+}
+
+/* ---------- 検査アプリ　問診 / 問診入力 ---------- */
+.interview_wrap {
+  margin: 74px 0 500px;
+  padding: 0 20px 0 40px;
+}
+
+#inspection.interview_input1 .interview_wrap,
+#inspection.interview_input2 .interview_wrap,
+#inspection.interview_input3 .interview_wrap,
+#inspection.interview_input4 .interview_wrap {
+  margin: 74px 0 140px;
+}
+
+.interview_list {
+  margin: 30px 0 0;
+}
+
+.interview_list .box .box_tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px dashed #b3b3b3;
+}
+
+.interview_list .box .box_tit.answered {
+  padding: 8.5px 35px 8.5px 20px;
+  background: #4d4d4d;
+}
+
+.interview_list .box .box_tit.answered h3 {
+  color: #fff;
+}
+
+.interview_list .box .box_tit.answered .edit__btn {
+  display: flex;
+  align-items: center;
+}
+
+.interview_list .box .box_tit.answered .edit__btn p {
+  margin: 0 60px 0 0;
+  color: #fff;
+}
+
+.interview_list .box .box_tit.answered .edit__btn a {
+  width: 122px;
+  padding: 9px 13px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.interview_list .box .box_tit.answered .edit__btn a:hover {
+  background: #d9d9d9;
+}
+
+.interview_list .box .box_tit .link2__btn a {
+  position: relative;
+  width: 24px;
+  height: 16px;
+}
+
+.interview_list .box .box_tit .link2__btn a:hover img {
+  opacity: 0;
+}
+
+.interview_list .box .box_tit .link2__btn a:hover::after {
+  content: url(../images/link_arrow2_down_on.png);
+  position: absolute;
+  top: -2px;
+  left: 0;
+}
+
+.interview_list .box .box_tit.edit .link2__btn a:hover::after {
+  content: url(../images/link_arrow2_up_on.png);
+  position: absolute;
+  top: -2px;
+  left: 0;
+}
+
+.interview_wrap__inner .save__btn {
+  position: fixed;
+  left: 1123px;
+  bottom: 80px;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.interview_wrap__inner .save__btn a,
+.interview_wrap__inner .save__btn button {
+  width: 142px;
+  padding: 13px;
+  color: #4d4d4d;
+  font-size: 1em;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 0.3);
+  cursor: pointer;
+}
+
+.interview_wrap__inner .save__btn a:hover,
+.interview_wrap__inner .save__btn button:hover {
+  background: #d9d9d9;
+}
+
+.interview_list .box .box_detail {
+  margin: 20px 0 80px;
+  padding: 0 20px;
+}
+
+.interview_list .box .box_detail .form_inner h4 {
+  margin: 0 0 10px;
+}
+
+.interview_list .box .box_detail .form_inner dl {
+  margin: 0 0 60px;
+}
+
+.interview_list .box .box_detail .form_inner dl dt {
+  margin: 0 0 10px;
+}
+
+.interview_list .box .box_detail .form_inner dl dd {
+  padding: 0 0 0 50px;
+}
+
+.interview_list .box .box_detail .form_inner dl dd.self_check {
+  padding: 0;
+}
+
+.interview_list .box .box_detail .form_inner dl dd:not(:last-child) {
+  margin: 0 0 25px;
+}
+
+.interview_list .box .box_detail .form_inner dl dd input {
+  display: none;
+}
+
+.interview_list .box .box_detail .form_inner dl dd ul.choice5_list,
+.interview_list .box .box_detail .form_inner dl dd ul.choice8_list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.interview_list .box .box_detail .form_inner dl dd ul.choice2_list {
+  display: flex;
+  justify-content: center;
+}
+
+.interview_list .box .box_detail .form_inner dl dd ul.choice4_list,
+.interview_list .box .box_detail .form_inner dl dd ul.choice3_list {
+  display: flex;
+}
+
+.interview_list
+  .box
+  .box_detail
+  .form_inner
+  dl
+  dd
+  ul.choice2_list
+  li:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+.interview_list
+  .box
+  .box_detail
+  .form_inner
+  dl
+  dd.self_check
+  ul.choice4_list
+  li:not(:last-child),
+.interview_list
+  .box
+  .box_detail
+  .form_inner
+  dl
+  dd.self_check
+  ul.choice3_list
+  li:not(:last-child) {
+  margin: 0 19.25px 0 0;
+}
+
+.interview_list .box .box_detail .form_inner dl dd ul li label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  text-align: center;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.interview_list .box .box_detail .form_inner dl dd ul li label.choice5,
+.interview_list .box .box_detail .form_inner dl dd ul li label.choice2 {
+  width: 142px;
+}
+
+.interview_list .box .box_detail .form_inner dl dd ul li label.choice8 {
+  width: 82px;
+}
+
+.interview_list
+  .box
+  .box_detail
+  .form_inner
+  dl
+  dd.self_check
+  ul
+  li
+  label.choice5,
+.interview_list
+  .box
+  .box_detail
+  .form_inner
+  dl
+  dd.self_check
+  ul
+  li
+  label.choice4,
+.interview_list
+  .box
+  .box_detail
+  .form_inner
+  dl
+  dd.self_check
+  ul
+  li
+  label.choice3 {
+  width: 160px;
+}
+
+.interview_list
+  .box
+  .box_detail
+  .form_inner
+  dl
+  dd.self_check
+  ul
+  li
+  label.choice5.row2,
+.interview_list
+  .box
+  .box_detail
+  .form_inner
+  dl
+  dd.self_check
+  ul
+  li
+  label.choice4.row2,
+.interview_list
+  .box
+  .box_detail
+  .form_inner
+  dl
+  dd.self_check
+  ul
+  li
+  label.choice3.row2 {
+  height: 56px;
+  line-height: 1.2em;
+}
+
+.interview_list .box .box_detail .form_inner dl dd input:checked + label {
+  color: #fff;
+  background: #4d4d4d;
+}
+
+/* ---------- 検査アプリ　測定 ---------- */
+#inspection .main_wrap__detail_tit .box {
+  width: 100%;
+}
+
+#inspection.measurement .main_wrap__detail_tit .box ul {
+  display: flex;
+  justify-content: center;
+}
+
+#inspection.measurement .main_wrap__detail_tit .box ul li {
+  font-weight: bold;
+}
+
+#inspection.measurement .main_wrap__detail_tit .box ul li:not(:last-child) {
+  margin: 0 90px 0 0;
+}
+
+.measurement_list {
+  margin: 0 0 140px;
+  padding: 0 20px 0 40px;
+}
+
+.measurement_box {
+  padding: 30px 0;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.measurement_box__input {
+  display: flex;
+}
+
+.measurement_box__input h3 {
+  width: 320px;
+  padding: 0 0 0 20px;
+  font-size: 1.15em;
+}
+
+.measurement_box__input .input_box {
+  width: 597px;
+  padding: 0 100px 0 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.measurement_box__input .input_box.list_type_a dl {
+  width: 290px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.measurement_box__input .input_box.list_type_b dl,
+.measurement_box__input .input_box.list_type_d dl {
+  text-align: center;
+}
+
+.measurement_box__input .input_box.list_type_b dl:not(:last-child),
+.measurement_box__input .input_box.list_type_d dl:not(:last-child) {
+  margin: 0 60px 0 0;
+}
+
+.measurement_box__input .input_box.list_type_a dl dt {
+  width: 110px;
+  text-align: center;
+}
+
+.measurement_box__input .input_box.list_type_b dl dt,
+.measurement_box__input .input_box.list_type_d dl dt {
+  margin: 0 0 5px;
+}
+
+.measurement_box__input .input_box.list_type_a dl dt.end,
+.measurement_box__input .input_box.list_type_a dl dd.end {
+  margin: 25px 0 0;
+}
+
+.measurement_box__input .input_box.list_type_d dl dd:not(:last-child) {
+  margin: 0 0 20px;
+}
+
+.measurement_box__input .input_box dl dd {
+  position: relative;
+}
+
+.measurement_box__input .input_box dl dd input,
+.measurement_box__input .input_box.list_type_e input {
+  width: 160px;
+  padding: 12px 20px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+
+.measurement_box__input .input_box dl dd span {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+}
+
+.measurement_box__input .input_box.list_type_d dl dd span.parts {
+  right: auto;
+  left: -45px;
+}
+
+.measurement_box__input .input_box dl dd input::placeholder {
+  color: #ccc;
+}
+
+.measurement_box__input .input_box.list_type_c {
+  position: relative;
+}
+
+.measurement_box__input .input_box.list_type_c::after {
+  content: url(../images/select_arrow.png);
+  position: absolute;
+  top: 50%;
+  right: 120px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.measurement_box__input .input_box.list_type_c select {
+  width: 220px;
+  padding: 16px 20px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.measurement_box__input .input_box.list_type_e {
+  position: relative;
+}
+
+.measurement_box__input .input_box.list_type_e span {
+  position: absolute;
+  top: 50%;
+  right: 70px;
+  transform: translateY(-50%);
+}
+
+.measurement_box__tutorial {
+  position: relative;
+}
+
+.measurement_toggle {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: url(../images/link_arrow2_down.png) no-repeat center;
+  cursor: pointer;
+}
+
+.measurement_toggle.on {
+  background: url(../images/link_arrow2_up.png) no-repeat center;
+}
+
+.measurement_box__tutorial__inner {
+  display: none;
+  padding: 30px 0 0;
+}
+
+.tutorial_menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.tutorial_menu li {
+  width: 414px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tutorial_menu li.on {
+  padding: 13px;
+  background: #f7f7f7;
+}
+
+.tutorial_menu li a {
+  position: relative;
+  padding: 13px;
+  color: #4d4d4d;
+  border: 1px solid #4d4d4d;
+  border-radius: 5px;
+}
+
+.tutorial_menu li a::after {
+  content: ">";
+  position: absolute;
+  right: 20px;
+  font-weight: normal;
+}
+
+.tutorial_menu li a:hover {
+  background: #d9d9d9;
+}
+
+.tutorial_detail_slide {
+  margin: 30px 0 0;
+  padding: 0 0 30px;
+}
+
+.tutorial_detail_slide.slide_none {
+  padding: 0;
+}
+
+.measurement_list .save__btn {
+  position: fixed;
+  left: 1123px;
+  bottom: 80px;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.measurement_list .save__btn button {
+  width: 142px;
+  padding: 13px;
+  color: #4d4d4d;
+  font-size: 1em;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 0.3);
+  cursor: pointer;
+}
+
+.measurement_list .save__btn button:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- 検査アプリ　結果報告書出力／編集　／　運動メニュー出力／編集 ---------- */
+.result_report_wrap,
+.exercise_menu_wrap {
+  margin: 50px 0;
+  padding: 0 20px 0 40px;
+}
+
+.result_report_wrap .result_report_wrap__inner iframe,
+.exercise_menu_wrap .exercise_menu_wrap__inner iframe {
+  width: 100%;
+  height: 750px;
+  border: 1px solid #ccc;
+}
+
+.result_report_wrap .result_report_wrap__inner .btn_wrap,
+.exercise_menu_wrap .exercise_menu_wrap__inner .btn_wrap {
+  margin: 30px 0 0;
+}
+
+.result_report_wrap .result_report_wrap__inner .btn_wrap ul,
+.exercise_menu_wrap .exercise_menu_wrap__inner .btn_wrap ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.result_report_wrap .result_report_wrap__inner .btn_wrap ul li:not(:last-child),
+.exercise_menu_wrap
+  .exercise_menu_wrap__inner
+  .btn_wrap
+  ul
+  li:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+.result_report_wrap .result_report_wrap__inner .btn_wrap ul li a,
+.exercise_menu_wrap .exercise_menu_wrap__inner .btn_wrap ul li a {
+  width: 142px;
+  padding: 13px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+.result_report_wrap .result_report_wrap__inner .btn_wrap ul li a:hover,
+.exercise_menu_wrap .exercise_menu_wrap__inner .btn_wrap ul li a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- モーダル　スタイル調整 ---------- */
+/* ---------- コメント編集用 ---------- */
+#modal_edit_comment {
+  max-width: 860px;
+  padding: 30px;
+}
+
+#modal_edit_comment p.tit {
+  margin: 0 0 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#modal_edit_comment textarea {
+  width: 100%;
+  height: 150px;
+}
+
+#modal_edit_comment .btn_wrap {
+  margin: 20px 0 0;
+}
+
+#modal_edit_comment .btn_wrap ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#modal_edit_comment .btn_wrap ul li:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+#modal_edit_comment .btn_wrap ul li a,
+#modal_edit_comment .btn_wrap ul li button {
+  width: 142px;
+  padding: 10px;
+  color: #4d4d4d;
+  text-align: center;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+#modal_edit_comment .btn_wrap ul li button {
+  color: #fff;
+  font-size: 1em;
+  background: #4d4d4d;
+}
+
+#modal_edit_comment .btn_wrap ul li a:hover {
+  background: #d9d9d9;
+}
+
+#modal_edit_comment .btn_wrap ul li button:hover {
+  background: #f87c15;
+  border: 1px solid #f87c15;
+}
+
+/* ---------- 検査アプリ　検診結果発行 ---------- */
+.issue_wrap {
+  margin: 50px 0;
+  padding: 0 15px 0 48px;
+}
+
+.single_slide {
+  position: relative;
+  width: 470px;
+  margin: 0 auto;
+}
+
+.issue_wrap .single_slide .slide_img {
+  border: 1px solid #ccc;
+}
+
+.single_slide .next_arrow {
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  width: 17px;
+  cursor: pointer;
+  z-index: 8888;
+}
+
+.single_slide .prev_arrow {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  transform: translateY(-50%);
+  width: 17px;
+  cursor: pointer;
+  z-index: 8888;
+}
+
+.single_slide .slick-dots {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.single_slide .slick-dots li {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.single_slide .slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.single_slide .slick-dots li button:hover {
+  background: #4d4d4d;
+}
+
+.single_slide .slick-dots li.slick-active button {
+  background: #4d4d4d;
+}
+
+.single_slide .slick-loading .slick-list {
+  background: #fff url(../images/ajax-loader.gif) center center no-repeat;
+}
+
+/* ---------- 測定スライド／測定モーダルスライド　スタイル調整 ---------- */
+/* ---------- チュートリアル用 ---------- */
+.modal_tutorial {
+  /* AnEditStart */
+  max-width: 917px !important;
+  padding: 30px 30px 50px !important;
+  /* AnEditEnd */
+}
+
+.modal_tutorial .modal_tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 20px;
+}
+
+.modal_tutorial .modal_tit h3 {
+  font-size: 1.5em;
+}
+
+.modal_tutorial .modal_tit .close__btn a {
+  font-size: 2.5em;
+  line-height: 1em;
+  color: #4d4d4d;
+}
+
+.modal_tutorial .modal_tit .close__btn a:hover {
+  color: #f87c15;
+}
+
+.tutorial_detail_slide .single_slide,
+.modal_tutorial .single_slide {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.single_slide .slide_contents {
+  padding: 25px;
+  background: #f7f7f7;
+}
+
+.single_slide.slide_3 .slide_contents {
+  height: 390px;
+}
+
+.single_slide.slide_4 .slide_contents {
+  height: 455px;
+}
+
+.single_slide.slide_5 .slide_contents {
+  height: 370px;
+}
+
+.single_slide.slide_6 .slide_contents {
+  height: 420px;
+}
+
+.single_slide.slide_7 .slide_contents {
+  height: 520px;
+}
+
+.single_slide.slide_9 .slide_contents {
+  height: 470px;
+}
+
+.single_slide.modal_slide_3 .slide_contents {
+  height: 440px;
+}
+
+.single_slide.modal_slide_4 .slide_contents {
+  height: 389px;
+}
+
+.single_slide.modal_slide_5 .slide_contents {
+  height: 416px;
+}
+
+.single_slide.modal_slide_6 .slide_contents {
+  height: 361px;
+}
+
+.single_slide.modal_slide_7 .slide_contents {
+  height: 300px;
+}
+
+.single_slide.modal_slide_9 .slide_contents {
+  height: 445px;
+}
+
+.single_slide .slide_contents.img img {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.single_slide .slide_contents.img img.mt40 {
+  margin: 40px auto 0;
+}
+
+.single_slide .slide_contents h4 {
+  margin: 0 0 15px;
+  font-size: 1.4em;
+}
+
+.single_slide .slide_contents p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.single_slide .slide_contents p.mt15 {
+  margin: 15px 0 0;
+}
+
+.single_slide .slide_contents p + ul {
+  margin: 20px 0 0;
+}
+
+.single_slide .slide_contents ul li {
+  padding: 0 0 0 1em;
+  text-indent: -1em;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.single_slide .slide_contents ul li:not(:last-child) {
+  margin: 0 0 10px;
+}
+
+.single_slide .slide_contents .box_wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.single_slide .slide_contents .box_wrap .box {
+  width: 47%;
+}
+
+.single_slide .slide_contents .box_wrap .box.ill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single_slide .slide_contents .box_wrap .box.ill img {
+  width: auto;
+  max-width: 100%;
+}
+
+.single_slide .slide_contents .box_wrap .box.img img {
+  width: auto;
+  max-width: 100%;
+  margin: 20px auto 0;
+}
+
+.single_slide .slide_contents .box_wrap .box .box_inner {
+  display: flex;
+  align-items: flex-start;
+}
+
+.single_slide .slide_contents .box_wrap .box .box_inner img {
+  margin: 0 0 0 20px;
+}
+
+.single_slide .slide_contents.gif_anime img {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.tutorial_detail_slide .single_slide .next_arrow,
+.modal_tutorial .single_slide .next_arrow {
+  right: 0;
+}
+
+.tutorial_detail_slide .single_slide .prev_arrow,
+.modal_tutorial .single_slide .prev_arrow {
+  left: 0;
+}
+
+.issue_wrap .issue__btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 60px 0 0;
+}
+
+.issue_wrap .issue__btn a {
+  width: 142px;
+  padding: 13px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+.issue_wrap .issue__btn a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- モーダル　スタイル調整 ---------- */
+/* ---------- 発行用 ---------- */
+#modal_issue,
+#modal_print {
+  padding: 50px 30px 20px;
+}
+
+@media print {
+  .jquery-modal {
+    display: none;
+  }
+}
+
+#modal_issue p.tit,
+#modal_print p.tit {
+  margin: 0 0 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#modal_issue ul,
+#modal_print ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0 0;
+}
+
+#modal_issue ul li:not(:last-child),
+#modal_print ul li:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+#modal_issue ul li a,
+#modal_print ul li a {
+  width: 142px;
+  padding: 10px;
+  color: #4d4d4d;
+  text-align: center;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+#modal_issue ul li:last-child a,
+#modal_print ul li:last-child a {
+  color: #fff;
+  font-size: 1em;
+  background: #4d4d4d;
+}
+
+#modal_issue ul li a:hover,
+#modal_print ul li a:hover {
+  background: #d9d9d9;
+}
+
+#modal_issue ul li:last-child a:hover,
+#modal_print ul li:last-child a:hover {
+  background: #f87c15;
+  border: 1px solid #f87c15;
+}
+
+/* ---------- 検査アプリ　ヘルプ　＞　受診者チュートリアル ---------- */
+#inspection.tutorial .main_wrap__detail_tit .print__btn a {
+  padding: 9px;
+}
+
+/* ---------- マイカルテアプリ　運動器健診結果 ---------- */
+.result_wrap {
+  padding: 0 40px 30px;
+}
+
+.result_box:not(:last-child) {
+  margin: 0 0 40px;
+}
+
+.result_box h4 {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 6px 30px;
+  color: #fff;
+  font-weight: normal;
+  background: #7a8fa2;
+  border-radius: 10px 10px 0 0;
+}
+
+.graph_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border: 1px solid #6cbb8c;
+  border-radius: 0 15px 15px 15px;
+}
+
+.graph_box.center {
+  justify-content: center;
+  height: 284px;
+}
+
+.result_box_inner_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result_box_inner:nth-of-type(1) {
+  width: 55%;
+}
+
+.result_box_inner:nth-of-type(2) {
+  width: 42%;
+}
+
+/* ---------- マイカルテアプリ　運動器健診結果（項目別） ---------- */
+.choice_list {
+  margin: 50px 0 0;
+  padding: 0 20px 0 40px;
+}
+
+.choice_list__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 595px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.choice_list__inner p {
+  font-size: 2em;
+  text-align: center;
+}
+
+/* ---------- マイカルテアプリ　運動メニュー ---------- */
+.motion_menu {
+  margin: 50px 0 0;
+  padding: 0 20px 0 40px;
+}
+
+.motion_menu__inner {
+  padding: 50px 69px;
+  color: #1a1a1a;
+  border: 1px solid #ccc;
+}
+@media screen and (min-width: 374px) and (max-width: 799px) {
+  .motion_menu__inner {
+    padding: 10px;
+  }
+}
+
+.motion_menu__inner p {
+  font-size: 2em;
+  text-align: center;
+}
+
+/* ---------- マイカルテアプリ　お知らせ ---------- */
+
+/* ---------- マイカルテアプリ　問い合わせ ---------- */
+#mycarte.inquiry .inquiry_menu .inquiry_menu__inner ul li:last-child a,
+#mycarte.account_inquiry .inquiry_menu .inquiry_menu__inner ul li:last-child a,
+#mycarte .glo-myCarte-faqDetail .inquiry_menu__inner ul li a {
+  padding: 55px 75px;
+}
+
+#mycarte.inquiry .inquiry_menu .inquiry_menu__inner ul li:last-child a dl dt,
+#mycarte.account_inquiry
+  .inquiry_menu
+  .inquiry_menu__inner
+  ul
+  li:last-child
+  a
+  dl
+  dt,
+#mycarte .glo-myCarte-faqDetail .inquiry_menu__inner ul li:last-child a dl dt
+/* .glo-management-faqDetail .inquiry_menu__inner ul li:last-child a dl dt,
+.glo-management-faqDetail .inquiry_menu__inner ul li.phone dl dt  */ {
+  width: 80px;
+  margin: 0 auto;
+}
+
+#mycarte.account_inquiry
+  .inquiry_menu
+  .inquiry_menu__inner
+  ul
+  li:last-child
+  a
+  dl
+  dd.tit {
+  font-size: 1.8em;
+}
+
+/* ---------- マイカルテアプリ　アカウント情報編集 ---------- */
+.account_top_list__inner .box dl dd.data dl.plan_mycarte dt {
+  width: 14.5em;
+}
+
+/* ---------- マイカルテアプリ　登録情報編集　／　検査アプリ　ゲスト受付　／　マイカルテアプリ　運動器ID編集 ---------- */
+#mycarte.account_edit .account_edit_wrap .form_inner dl dd.name_list,
+#mycarte.account_edit .account_edit_wrap .form_inner dl dd.gender_list,
+#inspection.guest .account_edit_wrap .form_inner dl dd.name_list,
+#inspection.guest .account_edit_wrap .form_inner dl dd.gender_list {
+  width: 340px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#mycarte.account_edit .account_edit_wrap .form_inner dl dd.birthday_list {
+  width: 520px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#inspection.guest .account_edit_wrap .form_inner dl dd.account_list input {
+  width: 250px;
+}
+
+#inspection.guest .account_edit_wrap .form_inner dl dd.account_list button {
+  width: 142px;
+  margin: 0 0 0 20px;
+  padding: 12px 20px;
+  color: #4d4d4d;
+  font-size: 1em;
+  text-align: center;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#inspection.guest
+  .account_edit_wrap
+  .form_inner
+  dl
+  dd.account_list
+  button:hover {
+  background: #d9d9d9;
+}
+
+#mycarte.account_edit .account_edit_wrap .form_inner dl dd.name_list input,
+#mycarte.account_edit .account_edit_wrap .form_inner dl dd.birthday_list input,
+#inspection.guest .account_edit_wrap .form_inner dl dd.name_list input,
+#inspection.guest .account_edit_wrap .form_inner dl dd.age_list input,
+#inspection.guest .account_edit_wrap .form_inner dl dd.height_list input,
+#inspection.guest .account_edit_wrap .form_inner dl dd.weight_list input {
+  width: 160px;
+}
+
+#mycarte.motionid_edit .motionid_edit_wrap .form_inner dl dd.height_list input {
+  width: 300px;
+}
+
+#inspection.guest .account_edit_wrap .form_inner dl dd.age_list,
+#inspection.guest .account_edit_wrap .form_inner dl dd.height_list,
+#inspection.guest .account_edit_wrap .form_inner dl dd.weight_list,
+#mycarte.motionid_edit .motionid_edit_wrap .form_inner dl dd.height_list {
+  display: flex;
+  align-items: flex-end;
+}
+
+#inspection.guest .account_edit_wrap .form_inner dl dd.age_list span,
+#inspection.guest .account_edit_wrap .form_inner dl dd.height_list span,
+#inspection.guest .account_edit_wrap .form_inner dl dd.weight_list span,
+#mycarte.motionid_edit .motionid_edit_wrap .form_inner dl dd.height_list span {
+  padding: 0 0 0 15px;
+}
+
+#mycarte.account_edit .account_edit_wrap .form_inner dl dd.gender_list input,
+#inspection.guest .account_edit_wrap .form_inner dl dd.gender_list input {
+  display: none;
+}
+
+#mycarte.account_edit .account_edit_wrap .form_inner dl dd.gender_list label,
+#inspection.guest .account_edit_wrap .form_inner dl dd.gender_list label {
+  width: 160px;
+  padding: 12px 20px;
+  text-align: center;
+  border: 1px solid #4d4d4d;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#mycarte.account_edit
+  .account_edit_wrap
+  .form_inner
+  dl
+  dd.gender_list
+  input#gender1:checked
+  ~ label.male,
+#mycarte.account_edit
+  .account_edit_wrap
+  .form_inner
+  dl
+  dd.gender_list
+  input#gender2:checked
+  ~ label.female,
+#inspection.guest
+  .account_edit_wrap
+  .form_inner
+  dl
+  dd.gender_list
+  input#gender1:checked
+  ~ label.male,
+#inspection.guest
+  .account_edit_wrap
+  .form_inner
+  dl
+  dd.gender_list
+  input#gender2:checked
+  ~ label.female {
+  color: #fff;
+  background: #4d4d4d;
+}
+
+/* ---------- マイカルテアプリ　連携アカウント情報編集 ---------- */
+#mycarte.account_sub .account_sub_list__inner .box > dl {
+  align-items: center;
+}
+
+#mycarte.account_sub .account_sub_list__inner .box > dl > dt {
+  font-weight: normal;
+}
+
+/* ---------- モーダル　スタイル調整 ---------- */
+/* ---------- 連携解除用 ---------- */
+#modal_release {
+  padding: 50px 100px;
+}
+
+#modal_release .modal_wrap {
+  text-align: center;
+}
+
+#modal_release p {
+  margin: 0 0 60px;
+  font-size: 1.1em;
+}
+
+#modal_release ul {
+  display: inline-block;
+}
+
+#modal_release ul li:not(:last-child) {
+  margin: 0 0 20px;
+}
+
+#modal_release ul li a {
+  width: 162px;
+  padding: 10px;
+  color: #4d4d4d;
+  text-align: center;
+  border: 1px solid #4d4d4d;
+  border-radius: 10px;
+}
+
+#modal_release ul li a:hover {
+  background: #d9d9d9;
+}
+
+/* ---------- マイカルテアプリ　施設アカウント連携 ---------- */
+.account_link_wrap {
+  margin: 170px 0 0;
+  padding: 0 150px;
+}
+
+@media print {
+  .account_link_wrap {
+    padding: 0;
+  }
+}
+
+.account_link_wrap .note_wrap {
+  text-align: center;
+}
+
+.account_link_wrap .form_inner {
+  margin: 104px auto 0;
+}
+
+.account_link_wrap .agree_check {
+  margin: 0 0 40px;
+  text-align: left;
+}
+
+.account_link_wrap .agree_check input {
+  margin: 0 0.5em 0 0;
+}
+
+.account_link_wrap .agree_check label {
+  cursor: pointer;
+}
+
+/* ---------- マイカルテアプリ　施設アカウント連携完了 ---------- */
+.account_link_done_wrap {
+  margin: 170px 0 52px;
+  padding: 0 150px;
+}
+
+@media print {
+  .account_link_done_wrap {
+    padding: 0;
+  }
+}
+
+.account_link_done_wrap .note_wrap {
+  text-align: center;
+}
+
+.account_link_done_wrap .note_wrap h2 {
+  margin: 0 0 170px;
+}
+
+.account_link_done_wrap .note_wrap a {
+  width: 420px;
+  margin: 0 auto;
+  padding: 12px;
+  color: #fff;
+  font-size: 1.1em;
+  text-align: center;
+  background: #4d4d4d;
+  border-radius: 5px;
+}
+
+.account_link_done_wrap .note_wrap a:hover {
+  background: #f87c15;
+}
+
+/* ---------- マイカルテアプリ　新規アカウント作成 ---------- */
+.account_new_wrap {
+  margin: 100px 0 50px;
+  padding: 0;
+}
+
+@media print {
+  .account_new_wrap {
+    padding: 0;
+  }
+}
+
+.account_new_wrap h2 {
+  font-size: 1.1em;
+}
+
+.account_new_wrap__inner,
+.account_auth_wrap__inner {
+  border-top: 8px solid #f87c15;
+  padding: 40px;
+  background: #f2f2f2;
+  border-radius: 0 0 10px 10px;
+}
+
+.account_new_wrap__inner .form_inner {
+  position: relative;
+  margin: 40px 0 0 80px;
+}
+
+.account_new_wrap__inner .form_inner ul {
+  width: 340px;
+}
+
+.account_new_wrap__inner .form_inner ul li:not(:last-child) {
+  margin: 0 0 30px;
+}
+
+.account_new_wrap__inner .form_inner ul li input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+
+.account_new_wrap__inner .form_inner ul li input::placeholder {
+  color: #ccc;
+}
+
+.account_new_wrap__inner .form_inner ul li.name_list input {
+  width: 160px;
+}
+
+.account_new_wrap__inner .form_inner ul li.name_list input:first-child {
+  margin: 0 20px 0 0;
+}
+
+.account_new_wrap__inner .form_inner ul li.gender_list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account_new_wrap__inner .form_inner ul li.gender_list input {
+  display: none;
+}
+
+.account_new_wrap__inner .form_inner ul li.gender_list label {
+  width: 160px;
+  padding: 12px 20px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #4d4d4d;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.account_new_wrap__inner
+  .form_inner
+  ul
+  li.gender_list
+  input#gender1:checked
+  ~ label.male,
+.account_new_wrap__inner
+  .form_inner
+  ul
+  li.gender_list
+  input#gender2:checked
+  ~ label.female {
+  color: #fff;
+  background: #4d4d4d;
+}
+
+.account_new_wrap__inner .form_inner ul li.password_list input:first-child {
+  margin: 0 0 10px;
+}
+
+.account_new_wrap__inner .form_inner .agree_check {
+  position: absolute;
+  bottom: 0;
+}
+
+.account_new_wrap__inner .form_inner .agree_check input {
+  margin: 0 0.5em 0 0;
+}
+
+.account_new_wrap__inner .form_inner .agree_check label {
+  cursor: pointer;
+}
+
+.account_new_wrap__inner .form_inner .next__btn a {
+  color: #fff;
+  background: #4d4d4d;
+  border: none;
+}
+
+.account_new_wrap__inner .form_inner .next__btn a:hover {
+  background: #f87c15;
+}
+
+/* ---------- マイカルテアプリ　アカウント認証 ---------- */
+@media print {
+  .account_auth_wrap {
+    padding: 0;
+  }
+}
+
+.account_auth_wrap__inner ul li {
+  margin: 30px;
+}
+@media screen and (min-width: 1322px) and (max-width: 1366px) {
+  .account_auth_wrap__inner ul li {
+    margin-top: 20px !important;
+    margin-bottom: 0px !important;
+  }
+}
+.account_auth_wrap__inner .authentication__btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0 0;
+}
+
+.account_auth_wrap__inner .authentication__btn a {
+  width: 142px;
+  padding: 13px;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+  background: #4d4d4d;
+  border-radius: 10px;
+}
+
+.account_auth_wrap__inner .authentication__btn a:hover {
+  background: #f87c15;
+}
+
+/* --------------------------------------------------------------------------------
+   フッター
+-------------------------------------------------------------------------------- */
+
+#management.application footer,
+#inspection.application footer,
+#mycarte.application footer,
+#mycarte.side_none footer {
+  width: 100%;
+}
+
+.footer_nav_pc ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* .footer_nav_pc ul li:not(:last-child) {
+  margin: 0 30px 0 0;
+} */
+.footer_nav_pc ul li:first-child {
+  margin: 0 30px 0 0;
+}
+.footer_nav_pc ul li:nth-child(2) {
+  margin: 0 30px 0 0;
+}
+
+@media screen and (min-width: 375px) and (max-width: 500px) {
+  .footer_nav_pc ul li:nth-child(2) {
+    margin: 0 0 0 0;
+  }
+}
+
+.footer_nav_pc ul li a {
+  color: #4d4d4d;
+}
+
+.footer_nav_pc ul li a:hover {
+  color: #f87c15;
+}
+
+/* --------------------------------------------------------------------------------
+   サイドナビハイド
+-------------------------------------------------------------------------------- */
+.header_wrap.side_hide {
+  height: auto;
+}
+#alc-maintenance .header_wrap.side_hide {
+  height: auto;
+}
+
+.g_nav .toggle {
+  cursor: pointer;
+}
+
+.main_wrap__detail.side_hide {
+  width: 100% !important;
+}
+
+/* PHUC MOD END */
+#management.data_list .main_wrap__detail.side_hide,
+#management.notice .main_wrap__detail.side_hide,
+#inspection.inspection_top .main_wrap__detail.side_hide,
+#inspection.notice .main_wrap__detail.side_hide,
+#mycarte.notice .main_wrap__detail.side_hide {
+  /* MOD_START */
+  /* left: 0px; */
+  /* MOD_END */
+  left: -300px;
+}
+
+.data_list_menu__inner table thead.side_hide,
+.data_list_menu__inner table tbody.side_hide,
+.reception_list__table thead.side_hide,
+.reception_list__table tbody.side_hide {
+  width: 1217px;
+}
+
+#mycarte.notice_list__check.side_hide {
+  width: 77.5%;
+}
+
+#management.data_list footer.side_hide,
+#management.notice footer.side_hide,
+#inspection.inspection_top footer.side_hide,
+#inspection.notice footer.side_hide,
+#mycarte.notice footer.side_hide {
+  width: 1280px;
+}
+
+/* --------------------------------------------------------------------------------
+   マイメニュー
+-------------------------------------------------------------------------------- */
+.modal_mymenu {
+  /* anEditStart */
+  /* display: none; */
+  /* anEditEnd */
+
+  height: 484.67px;
+
+  width: 400px;
+  position: fixed;
+  top: 75px;
+  right: 25px;
+  z-index: 9999;
+  background: #fff;
+  /* anEditStart */
+  /* border-top: 4px solid #f87c15; */
+  /* anEditEnd */
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.3);
+}
+
+.modal_mymenu .modal_wrap {
+  padding: 30px 0;
+
+  /* anEditStart */
+  border-top: 4px solid #f87c15;
+  /* anEditEnd */
+}
+
+.modal_mymenu .modal_tit {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 30px;
+  padding: 0 20px;
+}
+
+.modal_mymenu .modal_tit .close__btn {
+  cursor: pointer;
+}
+
+.modal_mymenu .modal_wrap ul {
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: center; */
+  margin: 0 30px 40px !important;
+}
+
+/* AN-EDIT-MYMODAL-MENU-START */
+#mycarte #modal_mycarte_mymenu.modal_mymenu .modal_wrap ul {
+  justify-content: center;
+}
+
+#mycarte #modal_mycarte_mymenu .modal_wrap ul {
+  justify-content: center;
+}
+/* AN-EDIT-MYMODAL-MENU-END */
+.modal_mymenu .modal_wrap ul li a {
+  padding: 45px 15px;
+  color: #4d4d4d;
+  text-align: center;
+  background: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.modal_mymenu .modal_wrap .account_top {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.modal_mymenu .modal_wrap .account_top a {
+  width: 220px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #4d4d4d;
+  text-align: center;
+  background: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-radius: 33px;
+}
+
+.modal_mymenu .modal_wrap .logout a {
+  width: 146px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  color: #4d4d4d;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.slick-prev::before {
+  content: url(../images/slide_prev.png) !important;
+}
+
+.slick-next::before {
+  content: url(../images/slide_next.png) !important;
+}
+.glo-helpPage {
+  padding-top: 100px;
+}
+.glo-helpPageText {
+  padding-top: 25px;
+}
+@media screen and (min-width: 375px) and (max-width: 500px) {
+  .modal_mymenu .modal_wrap ul {
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: center; */
+    margin: 0 5px 40px !important;
+  }
+}
