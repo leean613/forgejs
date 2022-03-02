@@ -35,14 +35,10 @@ export const PrivateRouteForApplication = ({ component: Component, ...rest }) =>
     return (
         <Route {...rest} render={props => {
             const token = authenticationService.token;
-            // if (!token) {
-            //     // not logged in so redirect to login page with the return url
-            //     return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
-            // }
-            // authorised so return component
-            console.log('====================================');
-            console.log(...props);
-            console.log('====================================');
+            if (!token) {
+                // not logged in so redirect to login page with the return url
+                return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
+            }
             return <Component {...props} />
         }} />
     )

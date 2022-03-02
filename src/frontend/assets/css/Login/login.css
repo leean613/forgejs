@@ -1,0 +1,146 @@
+﻿/* @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800"); */
+
+.auth-wrapper-opacity {
+  opacity: 0.3;
+}
+.login .login-main-wrap{
+  height: 100%;
+}
+
+.login-spinner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+}
+#lb-loginFailed {
+  text-align: left;
+}
+
+html,
+.login {
+  height: 100%;
+}
+
+.login_wrap {
+  margin: 0px 0px 0px ;
+  width: 100%;
+  padding: 35px 50px 40px;
+  background: #f2f2f2;
+  border-top: 8px solid #f87c15;
+  border-radius: 0 0 10px 10px;
+}
+
+
+.login .formLogin{
+  width: 60%;
+  margin: auto;
+}
+@media screen and (min-width: 1322px) and (max-width: 1366px){
+  .login .formLogin{
+    width: 70%;
+    margin: auto;
+  }
+}
+.glo-textNewAccount{
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 25px;
+}
+.glo-img-login{
+  margin-top: 25px;
+}
+#mycarte.login .glo-erroHight {
+  height: 20px;
+}
+#mycarte.login .login_wrap .glo-textColor {
+  margin: 0;
+}
+#mycarte.login .login_wrap .glo-isKeepLogin {
+  width: 14px;
+  height: 15px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  .glo-textNewAccount{
+    margin-bottom: 0px;
+  }
+  .glo-img-login{
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  #mycarte.login .box {
+    display: flex;
+  }
+
+  #mycarte.login .login_wrap .form_inner .box {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+  #mycarte.login .box {
+    display: flex;
+  }
+  #mycarte.login .login_wrap {
+    padding: 30px;
+  }
+  #mycarte.login .login_wrap .form_inner .box {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1101px) and (max-width: 1200px) {
+  #mycarte.login .box {
+    display: flex;
+  }
+  #mycarte.login .login_wrap {
+    padding: 30px;
+  }
+  #mycarte.login .login_wrap .form_inner .box {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 540px) {
+  #mycarte.login .formLogin{
+    margin-top: 25px;
+    width: 100%;
+  }
+
+  #mycarte.login .login_wrap .form_inner .box {
+    margin: 0;
+  }
+
+  #mycarte.login .login_wrap {
+    padding: 10px;
+  }
+
+}
+
+@media screen and (min-width: 540px) and (max-width: 800px) {
+  #mycarte.login .box {
+    display: flex;
+  }
+  #mycarte.login .login_wrap {
+    padding: 30px;
+  }
+  #mycarte.login .login_wrap .form_inner .box {
+    margin: 0;
+  }
+  #mycarte.login .formLogin{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1310px) {
+  #mycarte.login .formLogin{
+    width: 75%;
+  }
+}
+
+.box-forgot-password {
+  justify-content: flex-end !important;
+}
