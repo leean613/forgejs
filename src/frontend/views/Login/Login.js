@@ -2,9 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { RingLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 import "../../assets/css/Login/login.css";
+import orangeLogo from "../../assets/resource/images/logo_orange.svg";
 
 function Login(props) {
-
+  console.log('====================================');
+  console.log(props);
+  console.log('====================================');
   const [isLoading, setIsLoading] = useState(false);
   return (
     <>
@@ -26,8 +29,7 @@ function Login(props) {
               <div className="login_wrap glo-card">
                 <h1 className="glo-img-login">
                   <img
-                    // src={require("../../assets/resource/images/logo_orange.svg")}
-                    src="../../assets/resource/images/logo_orange.svg"
+                    src={orangeLogo}
                     alt="運動器検診"
                   />
                 </h1>
@@ -63,9 +65,9 @@ function Login(props) {
 
                   <div className="box box-forgot-password">
                     <div className="login_forgot">
-                      <Link to="/email-confirmation">
+                      {/* <Link to="/email-confirmation">
                         パスワードをお忘れの方
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                   <div className="submit_btn">
@@ -78,28 +80,34 @@ function Login(props) {
                   </div>
                   <p className="glo-textNewAccount">
                     アカウントをお持ちでない方
-                    <Link to="/account-new">新規作成</Link>
+                    {/* <Link to="/account-new">新規作成</Link> */}
                   </p>
                 </div>
+                {/* <Link to="/login2" ><button>Tới login2</button></Link> */}
+
                 {/* </form> */}
               </div>
             </div>
+
             <footer id="mycarte" className="footer">
               <nav className="footer_nav_pc">
                 <ul>
                   <li>
-                    <Link to="/privacy-policy" target="_blank">利用規約</Link>
+                    {/* <Link to="/privacy-policy" target="_blank">利用規約</Link> */}
                   </li>
                   <li>
-                    <Link to="/privacy-policy" target="_blank">プライバシーポリシー</Link>
+                    {/* <Link to="/privacy-policy" target="_blank">プライバシーポリシー</Link> */}
                   </li>
                   <li>
-                    <Link to="/privacy-policy" target="_blank">バージョン : 1.0.1</Link>
+                    {/* <Link to="/privacy-policy" target="_blank">バージョン : 1.0.1</Link> */}
                   </li>
                 </ul>
               </nav>
             </footer>
+
+
           </div>
+
         </div>
       </div>
     </>

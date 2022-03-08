@@ -1,0 +1,567 @@
+.login-spinner-isVisable {
+    display: none;
+}
+.glo-paddingTop {
+    padding: 30px !important;
+}
+#alc-maintenance .glo-paddingTop {
+    padding: 20px !important;
+}
+.glo-textStepTitle {
+    width: 57%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.glo-marginTop {
+    margin-top: 148px !important;
+    padding-bottom: 0 !important;
+}
+.glo-marginTopNo {
+    margin-top: 148px !important;
+    padding-bottom: 0 !important;
+}
+.glo-paddingTopApp {
+    padding: 27px !important;
+    /* background-color: #f2f2f2; */
+    border-radius: 10px;
+}
+#alc-maintenance .glo-paddingTopApp {
+    padding: 10px !important;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.glo-paddingTopApp-A3 {
+    padding: 27px !important;
+    border-radius: 10px;
+}
+#alc-maintenance .g_nav .toggle {
+    background-color: #e0e0e1;
+}
+.g_nav .toggle {
+    background-color: #f2f2f2;
+}
+.glo-minHeightLogin {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+}
+
+footer {
+    margin-top: 20px;
+    height: 20px;
+}
+.tit_user dl dt,
+.glo-textStepTitleBold,
+.glo-textStepTitle {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* card start */
+.glo-card {
+    /* box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%); */
+    transition: 0.3s;
+}
+/* card end */
+/* text giai thich start */
+.glo-textTitelExplain {
+    margin-top: 38px;
+    margin-bottom: 38px;
+    text-align: center;
+}
+/* text giai thich end */
+/* text loi start */
+.glo-textColor {
+    color: red;
+    font-size: 12px !important;
+    font-weight: bold;
+}
+/* text loi end */
+.glo-CardBody {
+    min-height: calc(100vh - 242px);
+}
+.glo-button {
+    color: #4d4d4d;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #4d4d4d;
+    border-radius: 10px;
+    width: 8em;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+.glo-button:hover {
+    background-color: #d9d9d9;
+}
+#mycarte.login .main_wrap,
+#management.login .main_wrap,
+#inspection .main_wrap {
+    width: 60%;
+    margin: 0 0 0 20%;
+    padding: 0px 0 0;
+    height: 100%;
+}
+#inspection.application .main_wrap {
+    width: 70% !important;
+    margin: 0 15% 0 15% !important;
+}
+@media screen and (min-width: 1322px) and (max-width: 1366px) {
+    #inspection.application .main_wrap {
+        width: 80% !important;
+        margin: 0 10% 0 10% !important;
+    }
+}
+#management .glo-minHeightCardManagement {
+    min-height: calc(100vh - 260px);
+}
+
+@media screen and (min-width: 375px) and (max-width: 413px) {
+    /* size text start */
+    /* a,
+    label,
+    li,
+    p,
+    .footer_nav_pc ul li a,
+    .login_wrap .form_inner .login_input input,
+    .login_wrap .form_inner .submit_btn button,
+    .account_auth_wrap__inner .authentication__btn button,
+    .notice_list__detail dl dt,
+    .notice_list__detail dl dd,
+    .glo-button,
+    .glo-textTit_user {
+        font-size: 12px !important;
+    } */
+    .glo-textTit_user {
+        font-size: 12px !important;
+    }
+    .glo-textColor {
+        font-size: 10px !important;
+    }
+    /* size text end */
+
+    .glo-paddingTop {
+        padding: 15px;
+    }
+}
+@media screen and (min-width: 414px) and (max-width: 540px) {
+    /* size text start */
+    /* a,
+    label,
+    li,
+    p,
+    .footer_nav_pc ul li a,
+    .login_wrap .form_inner .login_input input,
+    .login_wrap .form_inner .submit_btn button,
+    .account_auth_wrap__inner .authentication__btn button,
+    .notice_list__detail dl dt,
+    .notice_list__detail dl dd,
+    .glo-button, */
+    .glo-textTit_user {
+        font-size: 12px !important;
+    }
+
+    .glo-textColor {
+        font-size: 11px !important;
+    }
+    /* size text end */
+
+    .glo-paddingTop {
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 700px) {
+    /* size text start */
+    /* a,
+    label,
+    li,
+    p,
+    .footer_nav_pc ul li a,
+    button,
+    input,
+    .login_wrap .form_inner .login_input input,
+    .login_wrap .form_inner .submit_btn button,
+    .account_auth_wrap__inner .authentication__btn button,
+    .notice_list__detail dl dt,
+    .notice_list__detail dl dd,
+    .glo-button, */
+    .glo-textTit_user {
+        font-size: 15px !important;
+    }
+
+    .glo-textColor {
+        font-size: 13px !important;
+    }
+    /* size text start */
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .glo-textColor {
+        font-size: 13px !important;
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 900px) {
+    .g_nav label::before {
+        top: 0;
+    }
+    #mycarte .g_nav label h2 {
+        top: 16px !important;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 799px) {
+    .toggle::before {
+        top: 2;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    footer.responsive_common.side_hide {
+        margin-left: 0px;
+    }
+}
+@media screen and (width: 1024px) {
+    .header_wrap {
+        height: 95.1%;
+    }
+}
+
+.glo-minHeight {
+    /* min-height: calc(100vh - 228px); */
+    width: calc(100% - 300px);
+}
+@media screen and (min-width: 375px) and (max-width: 799px) {
+    .glo-minHeight {
+        width: 100%;
+    }
+    .glo-minHeightLogin {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 540px) {
+    #mycarte .formLogin {
+        margin-top: 25px;
+        width: 100%;
+    }
+    #management .formLogin {
+        margin-top: 25px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 374px) and (max-width: 799px) {
+    .header_logo {
+        position: fixed;
+        width: 100%;
+        height: 66px;
+        padding: 10px;
+    }
+    #alc-maintenance .header_logo {
+        position: fixed;
+        width: 100%;
+        height: 73px;
+        padding: 10px;
+    }
+    .appli_menu ul li {
+        width: 100% !important;
+    }
+
+    .appli_menu ul li a {
+        padding: 70px 50px;
+    }
+
+    .header_wrap {
+        margin-top: 66px;
+        position: fixed;
+    }
+
+    .g_nav .toggle {
+        margin: 0 !important;
+        height: 51px !important;
+    }
+
+    .main_wrap__detail_tit {
+        position: fixed;
+        top: 191px;
+    }
+
+    .main_wrap__tit {
+        margin: 0;
+        position: fixed;
+        top: 117px;
+        z-index: 99999;
+    }
+    #alc-maintenance .main_wrap__tit {
+        margin: 0;
+        position: fixed;
+        top: 117px;
+        z-index: 99999;
+    }
+    .g_nav .toggle::before {
+        top: 0;
+    }
+
+    .g_nav label::before {
+        top: -9px;
+    }
+
+    .g_nav label h2 {
+        top: 9px !important;
+    }
+
+    .glo-marginTop {
+        margin-top: 266px !important;
+        padding-bottom: 0 !important;
+    }
+    .glo-marginTopNo {
+        margin-top: 192px !important;
+        padding-bottom: 0 !important;
+    }
+    .glo-paddingTop,
+    .glo-paddingTopApp {
+        padding: 10px !important;
+    }
+    .glo-paddingTopApp-A3 {
+        padding: 10px !important;
+    }
+
+    .tit_user dl dt,
+    .glo-textStepTitleBold,
+    .glo-textStepTitle {
+        font-size: 16px !important;
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 540px) and (max-width: 799px) {
+    #management .g_nav label::before {
+        top: 0px;
+    }
+
+    #management .g_nav label h2 {
+        top: 19px !important;
+    }
+    .glo-paddingTop,
+    .glo-paddingTopApp {
+        padding: 20px !important;
+    }
+}
+@media screen and (width: 768px) {
+    .glo-paddingTop {
+        padding: 30px !important;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #mycarte .formLogin {
+        width: 100%;
+    }
+    #management .formLogin {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 800px) {
+    #mycarte.login .main_wrap,
+    #management.login .main_wrap,
+    #inspection .main_wrap {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 540px) {
+    #mycarte.login .main_wrap,
+    #management.login .main_wrap,
+    #inspection .main_wrap {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+@media screen and (min-width: 1300px) and (max-width: 1536px) {
+    .tit_user dl dt,
+    .glo-textStepTitleBold,
+    .glo-textStepTitle {
+        font-size: 1em !important;
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 375px) and (max-width: 842px) {
+    .tit_user dl dt,
+    .glo-textStepTitleBold,
+    .glo-textStepTitle {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 843px) and (max-width: 1024px) {
+    .tit_user dl dt,
+    .glo-textStepTitleBold,
+    .glo-textStepTitle {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1066px) {
+    .tit_user dl dt,
+    .glo-textStepTitleBold,
+    .glo-textStepTitle {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 1067px) and (max-width: 1149px) {
+    .tit_user dl dt,
+    .glo-textStepTitleBold,
+    .glo-textStepTitle {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 1150px) and (max-width: 1299px) {
+    .tit_user dl dt,
+    .glo-textStepTitleBold,
+    .glo-textStepTitle {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 1230px) and (max-width: 1610px) {
+    .tit_user dl dt,
+    .glo-textStepTitleBold,
+    .glo-textStepTitle {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+
+@media screen and (width: 1366px) {
+    .glo-top1366 {
+        margin-top: 20px !important;
+    }
+}
+@media screen and (width: 1200px) {
+    #inspection.application .appli_sub_menu ul li a {
+        width: 100% !important;
+    }
+}
+@media screen and (min-width: 426px) and (max-width: 799px) {
+    .g_nav label::before {
+        top: 0px;
+    }
+
+    .g_nav label h2 {
+        top: 19px !important;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 900px) {
+    #mycarte .g_nav label::before {
+        top: 12px;
+    }
+    #mycarte .g_nav .toggle::before {
+        top: 12px;
+    }
+    #mycarte .g_nav label h2 {
+        top: 28px !important;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+    #management .g_nav .toggle::before {
+        top: 12px;
+    }
+    #management .g_nav .toggle h2 {
+        top: 30px im !important;
+    }
+    #management .g_nav label::before {
+        top: 12px;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 900px) {
+    .main_wrap.side_hide .glo-paddingTop,
+    .main_wrap.side_hide .glo-paddingTopApp {
+        padding: 50px !important;
+    }
+    .main_wrap .glo-paddingTop,
+    .main_wrap .glo-paddingTopApp {
+        padding: 20px !important;
+    }
+}
+@media screen and (min-width: 901px) and (max-width: 1000px) {
+    .main_wrap.side_hide .glo-paddingTop,
+    .main_wrap.side_hide .glo-paddingTopApp {
+        padding: 50px !important;
+    }
+    .main_wrap .glo-paddingTop,
+    .main_wrap .glo-paddingTopApp {
+        padding: 25px !important;
+    }
+}
+@media screen and (min-width: 375px) and (max-width: 799px) {
+    .show_main_nav {
+        height: 200px !important;
+        overflow: auto !important;
+    }
+}
+textarea {
+    resize: none;
+}
+fieldset {
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding: 12px;
+    min-inline-size: min-content;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    border-image: initial;
+    background-color: white;
+}
+legend {
+    display: block;
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+.glo-textarea {
+    border: unset;
+    width: 100%;
+    height: 200px;
+}
+legend {
+    color: gray;
+    font-size: 0.9em;
+}
+.main_wrap.side_hide.glo-minHeight .detail_wrap {
+    margin-left: -150px;
+    margin-right: 150px;
+}
+@media screen and (min-width: 375px) and (max-width: 799px) {
+    .main_wrap.side_hide.glo-minHeight .detail_wrap {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+input:-internal-autofill-selected {
+    background-color: white;
+}
+#alc-maintenance .logout {
+    margin-top: 75px;
+}
+table {
+    font-size: 0.9em;
+}
+@media screen and (max-width: 1366px) {
+    table {
+        font-size: 0.8em;
+    }
+}

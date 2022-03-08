@@ -15,11 +15,11 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     // width: 800,
     // height: 600,
-    fullscreenable: true,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     }
   });
+  mainWindow.maximize();
 
   ipcMain.handle('openFile', async () => {
     // await handleFileOpen();
