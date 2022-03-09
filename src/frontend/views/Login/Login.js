@@ -89,21 +89,21 @@ function Login(props) {
               </div>
             </div>
 
-            <footer id="mycarte" className="footer">
+            {/* <footer id="mycarte" className="footer">
               <nav className="footer_nav_pc">
                 <ul>
                   <li>
-                    {/* <Link to="/privacy-policy" target="_blank">利用規約</Link> */}
+                    <Link to="/privacy-policy" target="_blank">利用規約</Link>
                   </li>
                   <li>
-                    {/* <Link to="/privacy-policy" target="_blank">プライバシーポリシー</Link> */}
+                    <Link to="/privacy-policy" target="_blank">プライバシーポリシー</Link>
                   </li>
                   <li>
-                    {/* <Link to="/privacy-policy" target="_blank">バージョン : 1.0.1</Link> */}
+                    <Link to="/privacy-policy" target="_blank">バージョン : 1.0.1</Link>
                   </li>
                 </ul>
               </nav>
-            </footer>
+            </footer> */}
 
 
           </div>
