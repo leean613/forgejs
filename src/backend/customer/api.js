@@ -1,4 +1,4 @@
-let databasePath = 'database/test.db';
+let databasePath = 'src/database/test.db';
 import betterSqlite from 'better-sqlite3';
 
 export const getTest = () => {
@@ -11,7 +11,7 @@ export const getAllCustomer = async () => {
    * starting connection
    */
 
-  let page: number = 1;
+  let page = 1;
   const database = betterSqlite(databasePath);
 
   /**

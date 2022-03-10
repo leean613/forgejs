@@ -2,6 +2,7 @@ const { app, BrowserWindow, dialog, ipcMain, session } = require('electron');
 const path = require('path');
 const os = require('os')
 import bettersqlite3 from "better-sqlite3";
+import { getAllCustomer } from "./backend/customer/api";
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   // eslint-disable-line global-require
@@ -20,6 +21,12 @@ const createWindow = () => {
     }
   });
   mainWindow.maximize();
+
+  ipcMain.handle('searcDb', async() =>{
+    const result = await getAllCustomer();
+    console.log("da cal xong searcDb");
+    return result;
+  });
 
   ipcMain.handle('openFile', async () => {
     // await handleFileOpen();
