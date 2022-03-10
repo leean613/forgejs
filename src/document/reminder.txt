@@ -1,6 +1,13 @@
-better-sqlite3 : 
+query form 
+better-sqlite3
 https://github.com/JoshuaWise/better-sqlite3/blob/master/docs/api.md 
 
 Electron forge 
 
 Webpack
+
+db management 
+https://dbeaver.io/
+
+chú ý lúc cài đặt version thư viện cho tương thích!!
+
