@@ -11,7 +11,6 @@ import { HashRouter } from 'react-router-dom';
 
 function App(props)  {
     const hist = createHashHistory 
-    console.log(hist);
  return(
     <GlobalProvider>
        <HashRouter history={hist}>

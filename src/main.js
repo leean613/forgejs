@@ -1,8 +1,9 @@
 const { app, BrowserWindow, dialog, ipcMain, session } = require('electron');
 const path = require('path');
-const os = require('os')
-import bettersqlite3 from "better-sqlite3";
-import { getAllCustomer } from "./backend/customer/api";
+const os = require('os');
+import * as fs from 'fs';
+import Database from 'better-sqlite3-multiple-ciphers';
+import { getAllCustomer, insertListCustomer } from "./backend/customer/api";
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   // eslint-disable-line global-require
@@ -22,9 +23,15 @@ const createWindow = () => {
   });
   mainWindow.maximize();
 
-  ipcMain.handle('searcDb', async() =>{
+  ipcMain.handle('searcDb', async () => {
     const result = await getAllCustomer();
-    console.log("da cal xong searcDb");
+    console.log("searcDb successfully");
+    return result;
+  });
+
+  ipcMain.handle('insertList', async () => {
+    const result = await insertListCustomer();
+    console.log("insert successfully");
     return result;
   });
 
@@ -50,7 +57,7 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 // app.whenReady().then(async () => {
-  // load react dev tool
+// load react dev tool
 //   await session.defaultSession.loadExtension(reactDevToolsPath)
 // });
 app.on('ready', createWindow);
@@ -73,35 +80,44 @@ app.on('activate', () => {
 });
 
 
-  function createDataBase() {
-    /**
-     * starting connection
-     */
-    let database;
-    let databasePath = 'src/database/test.db';
-  
-    try {
-      database = bettersqlite3(databasePath);
-    } catch(err) {
-      database = new bettersqlite3(databasePath);
-    }
-    /**
-     * creating table if not exists in the db
-     */
-    const sqlScript = `CREATE TABLE IF NOT EXISTS customer(
-      id TEXT PRIMARY KEY,
-      password TEXT NOT NULL);`;
-  
-    /**
-     * run script
-     */
+function createDataBase() {
+  /**
+   * starting connection
+   */
+  // let database;
+  let databasePath = 'src/database/testCrptyo.db';
+
+  const sqlScript = `CREATE TABLE IF NOT EXISTS customer(
+    id integer  PRIMARY KEY autoincrement,
+    password TEXT NOT NULL);`;
+
+
+  try {
+    const database = require('better-sqlite3-multiple-ciphers')(databasePath, { fileMustExist: true });
+    database.pragma("key='secret-key'");
     database.prepare(sqlScript).run();
-  
-    /**
-     * close connection
-     */
     database.close();
-  
+  } catch (err) {
+    if (!fs.existsSync(databasePath)) {
+      console.log(err);
+      const database = require('better-sqlite3-multiple-ciphers')(databasePath, { verbose: console.log });
+      database.prepare(sqlScript).run();
+      database.pragma("rekey='secret-key'");
+      database.close();
+    }
   }
+  /**
+   * creating table if not exists in the db
+   */
+  /**
+   * run script
+   */
+
+  /**
+   * close connection
+   */
+
+
+}
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.

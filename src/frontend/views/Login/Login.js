@@ -5,9 +5,6 @@ import "../../assets/css/Login/login.css";
 import orangeLogo from "../../assets/resource/images/logo_orange.svg";
 
 function Login(props) {
-  console.log('====================================');
-  console.log(props);
-  console.log('====================================');
   const [isLoading, setIsLoading] = useState(false);
   return (
     <>
