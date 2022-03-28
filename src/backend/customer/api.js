@@ -8,20 +8,17 @@ export const getTest = () => {
 }
 
 export const getAllCustomer = async () => {
-  /**
-   * starting connection
-   */
 
   let page = 1;
 
-
+  /**
+   * starting connection
+   */
   const database = Database(databasePathv1);
-  // const database = require('better-sqlite3-multiple-ciphers')(databasePathv1);
-  // const database = require('better-sqlite3')(databasePath);
   database.pragma("key='secret-key'");
 
   /**
-   * selecting all in the interval to 10 for each page
+   * selecting all in the interval
    */
   const sqlScript = `SELECT * FROM 'customer'`;
   // WHERE(id > ? AND id <= ?);`
@@ -32,18 +29,18 @@ export const getAllCustomer = async () => {
    */
 
   const dbResponse = database.prepare(sqlScript).all();
-  // const dbResponse = database.prepare(sqlScript).all(((page-1)*10), (page*10));
 
   /**
    * for pagination
-   *
-   * the number of all in database
+   * const dbResponse = database.prepare(sqlScript).all(((page-1)*10), (page*10));
    */
 
+
+  //  the number of all in database
   const numberOfProducts = database.prepare('SELECT * FROM customer;').all().length;
 
   /**
-   * organizing to be more clear in the react app
+   * organizing to be more clear in the react app, use r object
    */
   const productInfo = {
     page,
@@ -68,14 +65,14 @@ export const insertListCustomer = async () => {
     const database = require('better-sqlite3-multiple-ciphers')(databasePathv1, { fileMustExist: true });
     database.pragma("key='secret-key'");
     const insert = database.prepare('INSERT INTO customer (password) VALUES (@password)');
-    const insertMany = database.transaction((cats) => {
-      for (const cat of cats) insert.run(cat);
+    const insertMany = database.transaction((items) => {
+      for (const item of items) insert.run(item);
     });
 
     insertMany([
-      { password: "secret" },
-      { password: "secret" },
-      { password: "secret" },
+      { password: "secret1" },
+      { password: "secret2" },
+      { password: "secret3" },
     ]);
 
     response = {

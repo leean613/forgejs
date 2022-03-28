@@ -9,5 +9,5 @@ Webpack
 db management 
 https://dbeaver.io/
 
-chú ý lúc cài đặt version thư viện cho tương thích!!
+chú ý lúc cài đặt version thư viện tương thích!!
 
