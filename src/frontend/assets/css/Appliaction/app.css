@@ -1,0 +1,346 @@
+.user-avatar-app {
+  width: 80px;
+  height: 80px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+#inspection.application .header_logo {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border-top: none;
+  order: 2;
+  position: unset;
+  margin: auto;
+  text-align: center;
+}
+.glo-applist-paddTop{
+  padding-top: 0px;
+}
+@media screen and (min-width: 375px) and (max-width: 799px) {
+  #inspection.application .header_logo {
+    width: 47%;
+    text-align: unset;
+    height: 100px;
+  }
+  .glo-applist-paddTop{
+    padding-top: 50px;
+  }
+}
+/* #inspection.application .header_logo {
+  background-color: #f2f2f2;
+} */
+#inspection.application .glo-minHeightApplication {
+  min-height: 70vh;
+}
+#inspection.application .main_wrap {
+  padding-top: 25vh;
+}
+#inspection.application .glo-contentApplication {
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#inspection.application .glo-content1 {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+#inspection.application .glo-contentLable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+#inspection.application .glo-textblack {
+  color: black;
+}
+#inspection.application .appli_sub_menu ul li {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#inspection.application .glo-header {
+  /* border-top: 8px solid #f87c15; */
+  border-radius: 0 0 10px 10px;
+  /* background-color: #f2f2f2; */
+}
+#inspection.application header {
+  padding: 8px 20px 0px 20px;
+  border-top: 8px solid #f87c15;
+}
+#inspection.application .header_user {
+  width: 50%;
+}
+#inspection.application .header_btn {
+  width: 50%;
+}
+#inspection.application .appli_menu ul li a {
+  padding: 78px 60px;
+  background-color: #f2f2f2;
+  font-size: 1em;
+  border: unset;
+  height: 189px;
+  width: 250px;
+  font-weight: bold;
+}
+#inspection.application .appli_sub_menu ul li a {
+  background-color: #f2f2f2;
+  width: 230px;
+}
+#inspection.application .header_user dl dd{
+  font-size: 1.2em;
+}
+@media screen and (min-width: 375px) and (max-width: 1200px) {
+  .glo-applist-username{
+    flex-direction: column;
+  }
+  #inspection.application .header_user dl dd{
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 413px) {
+  #inspection.application .header_user dl dd{
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 414px) and (max-width: 1200px) {
+  #inspection.application .header_user dl dd{
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 800px) {
+  #inspection.application .glo-content1 {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  #inspection.application .glo-contentLable {
+    margin-bottom: 30px;
+  }
+  #inspection.application .user-avatar-app {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+  }
+
+  #inspection.application .appli_menu ul li {
+    margin-bottom: 30px;
+  }
+
+  #inspection.application .header_logo img {
+    width: 70%;
+    padding-left: 10px;
+  }
+
+  #inspection.application .header_btn {
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    margin-right: 5px;
+  }
+  #inspection.application header {
+    padding: 5px;
+  }
+
+  #inspection.application .application_wrap {
+    margin: 58px 0 0;
+  }
+  #inspection.application .appli_sub_menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+  }
+  #inspection.application .appli_sub_menu ul li {
+    margin-bottom: 30px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #inspection.application .glo-noMarginBottom {
+    margin-bottom: 0 !important;
+  }
+
+  #inspection.application .main_wrap {
+    margin-top: 0;
+    padding-top: 145px;
+  }
+  #inspection.application .appli_menu {
+    display: flex;
+    justify-content: center;
+    padding-top: 21px;
+  }
+  #inspection.application .appli_sub_menu {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+@media screen and (min-width: 540px) and (max-width: 759px) {
+  #inspection.application .application_wrap {
+    margin: 0;
+  }
+
+  #inspection.application header {
+    padding: 15px;
+    width: 100%;
+  }
+
+  #inspection.application .user-avatar-app {
+    width: 55px;
+    height: 55px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-left: 10px;
+  }
+
+  #inspection.application .header_logo img {
+    width: 75%;
+  }
+  #inspection.application .header_btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+  }
+  #inspection.application .main_wrap {
+    padding-top: 168px !important;
+    margin-top: 0 !important;
+  }
+}
+@media screen and (min-width: 760px) and (max-width: 1200px) {
+  #inspection.application .glo-content1 {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  #inspection.application .header_logo img {
+    width: 100%;
+  }
+  #inspection.application .user-avatar-app {
+    width: 70px;
+    height: 70px;
+  }
+  #inspection.application header {
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+  }
+  #inspection.application .header_user {
+    margin-left: 16px;
+  }
+  #inspection.application .header_btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  #inspection.application .application_wrap {
+    margin: 0;
+  }
+  #inspection.application .main_wrap {
+    padding-top: 121px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+  #inspection.application .glo-contentLable,
+  #inspection.application .appli_sub_menu ul li {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    width: 300px;
+  }
+  #inspection.application .appli_sub_menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+  }
+}
+@media screen and (width: 1366px) {
+  #inspection.application .glo-contentLable,
+  #inspection.application .appli_sub_menu ul li {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+#inspection.application .appli_menu ul li a:hover {
+  background-color: #d9d9d9;
+}
+@media screen and (width: 1024px) {
+  .appli_menu ul li {
+    width: 100% !important;
+  }
+  #inspection.application .appli_menu {
+    display: flex;
+    justify-content: center;
+  }
+  #inspection.application .appli_sub_menu ul li {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 760px) and (max-width: 1200px) {
+  #inspection.application header {
+    background-color: white;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1500px) {
+  #inspection.application .appli_menu ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #inspection.application .glo-contentLable,
+  #inspection.application .appli_sub_menu ul li {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+  #inspection.application .appli_menu ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  #inspection.application .appli_sub_menu ul {
+    flex-direction: row;
+  }
+  #inspection.application .appli_sub_menu ul li.glo-appContent2Li {
+    width: 220px;
+  }
+  #inspection.application .appli_sub_menu ul li.glo-appContent2Li2 {
+    width: 220px;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 999px) {
+  #inspection.application .appli_sub_menu ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1500px) {
+  #inspection.application .appli_sub_menu ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  #inspection.application .appli_sub_menu ul li {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+  #inspection.application .appli_sub_menu ul li {
+    display: flex;
+    justify-content: center;
+  }
+}
+#inspection.application header {
+  background-color: white;
+}

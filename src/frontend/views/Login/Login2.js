@@ -18,9 +18,12 @@ function Login2(props) {
         console.log(window.electron);
         let result = await window.electron.electronAPI()
         if (result?.length > 0) {
-            setItem(result);
+            console.log('====================================');
+            console.log(result);
+            console.log('====================================');
+            // setItem(result);
         }
-        console.log(result);
+        // console.log(result);
     }
 
     const insertCustomerFromDb = async () => {

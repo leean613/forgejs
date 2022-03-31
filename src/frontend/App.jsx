@@ -14,7 +14,7 @@ function App(props)  {
  return(
     <GlobalProvider>
        <HashRouter history={hist}>
-       <nav>
+       {/* <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -26,9 +26,9 @@ function App(props)  {
               <Link to="/application">application</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
             <Switch>
-               <Route path="/login2" render={(props) => <Login2 {...props} />}></Route>
+               {/* <Route path="/login2" render={(props) => <Login2 {...props} />}></Route> */}
                <Route path="/login" render={(props) => <Login {...props} />}></Route>
                <Route path="/application" render={(props) => <Application {...props} />}></Route>
                

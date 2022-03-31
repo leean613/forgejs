@@ -3,14 +3,16 @@ const path = require('path');
 const os = require('os');
 import * as fs from 'fs';
 import Database from 'better-sqlite3-multiple-ciphers';
-import { getAllCustomer, insertListCustomer } from "./backend/customer/api";
+import { insertListCustomer } from "./backend/customer/api";
+import { getAllCustomer } from './backend/customer/apiPgv2';
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   // eslint-disable-line global-require
   app.quit();
 }
 
-const reactDevToolsPath = "C:/Users/Admin/AppData/Local/Google/Chrome/User Data/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.23.0_1"
+const reactDevToolsPath = "C:/Users/Admin/AppData/Local/Google/Chrome/User Data/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.24.0_0"
 
 const createWindow = () => {
   // Create the browser window.
@@ -23,43 +25,43 @@ const createWindow = () => {
   });
   mainWindow.maximize();
 
-  ipcMain.handle('searcDb', async () => {
-    const result = await getAllCustomer();
-    console.log("searcDb successfully");
+  // ipcMain.handle('searcDb', (username, password) => {
+  //   console.log(username, password);
+  //   const result = getAllCustomer(username, password);
+  //   console.log("searcDb successfully");
+  //   return result;
+  // });
+
+  ipcMain.handle('searcDb', async (event, username, password) => {
+    let result = await getAllCustomer(username, password);
     return result;
-  });
+  })
 
   ipcMain.handle('insertList', async () => {
     const result = await insertListCustomer();
-    console.log("insert successfully");
     return result;
   });
 
   ipcMain.handle('openFile', async () => {
-    // await handleFileOpen();
     const result = await dialog.showOpenDialog({ properties: ['openFile'] });
     return result;
   });
 
-  console.log('====================================');
-  console.log(MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY);
-  console.log(MAIN_WINDOW_WEBPACK_ENTRY);
-  console.log('====================================');
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
-  createDataBase();
+  // createDataBase();
 };
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-// app.whenReady().then(async () => {
-// load react dev tool
-//   await session.defaultSession.loadExtension(reactDevToolsPath)
-// });
+app.whenReady().then(async () => {
+  // load react dev tool
+  await session.defaultSession.loadExtension(reactDevToolsPath)
+});
 app.on('ready', createWindow);
 
 // Quit when all windows are closed, except on macOS. There, it's common
